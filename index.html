@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aspect Génétique du Développement Embryonnaire - L3 Génétique</title>
-    <meta name="description" content="Ressources pédagogiques pour le module Aspect Génétique du Développement Embryonnaire - Université d'Oran 1">
+    <meta name="description" content="Ressources pédagogiques - Université d'Oran 1 - Dr Abdelkader ALLOUCHE">
     <style>
         * {
             margin: 0;
@@ -13,26 +13,24 @@
         }
 
         :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #dc2626;
-            --accent-color: #f59e0b;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f3f4f6;
+            --primary: #1e3a8a;
+            --secondary: #dc2626;
+            --accent: #f59e0b;
+            --text: #1f2937;
+            --light: #f3f4f6;
             --white: #ffffff;
-            --gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
+            color: var(--text);
             overflow-x: hidden;
         }
 
         /* Navigation */
         nav {
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
@@ -84,44 +82,22 @@
         /* Hero Section */
         .hero {
             margin-top: 60px;
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
             color: var(--white);
-            padding: 6rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             animation: fadeInUp 1s ease;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
             opacity: 0.95;
-            animation: fadeInUp 1s ease 0.2s both;
         }
 
         .hero-info {
@@ -129,38 +105,33 @@
             backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 10px;
-            margin: 2rem 0;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .hero-info p {
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
+            margin: 2rem auto;
+            max-width: 800px;
         }
 
         .cta-button {
             display: inline-block;
-            background: var(--secondary-color);
+            background: var(--secondary);
             color: var(--white);
             padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
             margin-top: 1.5rem;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
-            animation: fadeInUp 1s ease 0.6s both;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1rem;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
         }
 
-        /* Section Styles */
+        /* Sections */
         section {
-            padding: 5rem 2rem;
+            padding: 4rem 2rem;
         }
 
         .container {
@@ -170,8 +141,8 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            color: var(--primary-color);
+            font-size: 2.2rem;
+            color: var(--primary);
             margin-bottom: 1rem;
             position: relative;
         }
@@ -181,37 +152,38 @@
             display: block;
             width: 80px;
             height: 4px;
-            background: var(--secondary-color);
+            background: var(--secondary);
             margin: 1rem auto;
             border-radius: 2px;
         }
 
         .section-subtitle {
             text-align: center;
-            color: var(--text-light);
-            font-size: 1.2rem;
+            color: #6b7280;
             margin-bottom: 3rem;
+            font-size: 1.1rem;
         }
 
-        /* Features/Courses Section */
+        /* Features Grid */
         .features {
-            background: var(--bg-light);
+            background: var(--light);
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
         .feature-card {
             background: var(--white);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: all 0.3s;
-            border-top: 4px solid var(--primary-color);
+            cursor: pointer;
+            border-top: 4px solid var(--primary);
         }
 
         .feature-card:hover {
@@ -225,34 +197,8 @@
         }
 
         .feature-card h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
+            color: var(--primary);
             margin-bottom: 1rem;
-        }
-
-        .feature-card p {
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .feature-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--text-dark);
-        }
-
-        .feature-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-            font-weight: bold;
         }
 
         /* Video Section */
@@ -263,32 +209,41 @@
         .video-container {
             max-width: 900px;
             margin: 0 auto;
-            background: var(--bg-light);
+            background: var(--light);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
+        }
+
         .video-placeholder {
-            aspect-ratio: 16/9;
-            background: var(--gradient);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
             font-size: 1.5rem;
-            position: relative;
+            cursor: pointer;
         }
 
         .play-button {
             width: 80px;
             height: 80px;
-            background: var(--secondary-color);
+            background: var(--secondary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
             transition: transform 0.3s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
@@ -308,25 +263,19 @@
             padding: 2rem;
         }
 
-        .video-info h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+        /* Documents Section */
+        .documents {
+            background: var(--light);
         }
 
-        /* Slides Section */
-        .slides {
-            background: var(--bg-light);
-        }
-
-        .slides-grid {
+        .documents-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .slide-card {
+        .doc-card {
             background: var(--white);
             border-radius: 10px;
             overflow: hidden;
@@ -334,67 +283,104 @@
             transition: all 0.3s;
         }
 
-        .slide-card:hover {
+        .doc-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        .slide-header {
-            background: var(--gradient);
+        .doc-header {
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
             color: var(--white);
             padding: 1.5rem;
             text-align: center;
         }
 
-        .slide-number {
-            font-size: 2rem;
-            font-weight: bold;
-            opacity: 0.9;
+        .doc-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
-        .slide-content {
+        .doc-content {
             padding: 1.5rem;
         }
 
-        .slide-content h4 {
-            color: var(--primary-color);
+        .doc-content h4 {
+            color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.2rem;
         }
 
-        .slide-content ul {
+        .doc-content ul {
             list-style: none;
-            color: var(--text-light);
+            margin-bottom: 1.5rem;
         }
 
-        .slide-content li {
-            padding: 0.3rem 0;
-            padding-left: 1.2rem;
+        .doc-content li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
             position: relative;
+            color: #6b7280;
         }
 
-        .slide-content li::before {
-            content: '•';
-            color: var(--secondary-color);
+        .doc-content li::before {
+            content: '✓';
             position: absolute;
             left: 0;
+            color: var(--secondary);
             font-weight: bold;
         }
 
-        .download-btn {
+        .doc-btn {
             display: block;
             text-align: center;
-            background: var(--primary-color);
+            background: var(--primary);
             color: var(--white);
             padding: 0.8rem;
             text-decoration: none;
-            margin: 1rem;
             border-radius: 5px;
             transition: background 0.3s;
+            cursor: pointer;
         }
 
-        .download-btn:hover {
-            background: var(--secondary-color);
+        .doc-btn:hover {
+            background: var(--secondary);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow: auto;
+        }
+
+        .modal-content {
+            background: var(--white);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .close-modal:hover {
+            color: var(--secondary);
         }
 
         /* Contact Section */
@@ -410,42 +396,26 @@
         }
 
         .contact-info h3 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
+            color: var(--primary);
             margin-bottom: 1.5rem;
-        }
-
-        .contact-details {
-            margin-bottom: 2rem;
         }
 
         .contact-item {
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
             gap: 1rem;
         }
 
         .contact-icon {
             font-size: 1.5rem;
-            color: var(--secondary-color);
-        }
-
-        .contact-item div strong {
-            color: var(--primary-color);
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-
-        .contact-item div p {
-            color: var(--text-light);
+            color: var(--secondary);
         }
 
         .contact-form {
-            background: var(--bg-light);
-            padding: 2.5rem;
+            background: var(--light);
+            padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .form-group {
@@ -454,7 +424,7 @@
 
         .form-group label {
             display: block;
-            color: var(--primary-color);
+            color: var(--primary);
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
@@ -466,54 +436,41 @@
             border: 2px solid #e5e7eb;
             border-radius: 8px;
             font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
+            border-color: var(--primary);
         }
 
         .submit-btn {
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
             color: var(--white);
             padding: 1rem 2rem;
             border: none;
             border-radius: 8px;
             font-size: 1.1rem;
-            font-weight: bold;
             cursor: pointer;
             width: 100%;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.4);
         }
 
         /* Footer */
         footer {
-            background: var(--primary-color);
+            background: var(--primary);
             color: var(--white);
             text-align: center;
             padding: 2rem;
         }
 
         footer a {
-            color: var(--accent-color);
+            color: var(--accent);
             text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
         }
 
         /* Animations */
@@ -528,7 +485,7 @@
             }
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -538,20 +495,8 @@
                 display: block;
             }
 
-            .hero {
-                padding: 4rem 1.5rem;
-            }
-
             .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .contact-wrapper {
@@ -560,44 +505,9 @@
             }
 
             .features-grid,
-            .slides-grid {
+            .documents-grid {
                 grid-template-columns: 1fr;
             }
-
-            section {
-                padding: 3rem 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .cta-button {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
-
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Loading Animation */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,.3);
-            border-radius: 50%;
-            border-top-color: var(--white);
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -610,7 +520,7 @@
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#cours">Cours</a></li>
                 <li><a href="#video">Vidéo</a></li>
-                <li><a href="#slides">Slides</a></li>
+                <li><a href="#documents">Documents</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu">☰</div>
@@ -619,105 +529,48 @@
 
     <!-- Hero Section -->
     <section class="hero" id="accueil">
-        <div class="hero-content">
-            <h1>Aspect Génétique du Développement Embryonnaire</h1>
-            <p class="hero-subtitle>Maîtrisez les mécanismes fondamentaux du développement embryonnaire chez Drosophila melanogaster</p>
-            
-            <div class="hero-info">
-                <p><strong>🎓 Université d'Oran 1 - Ahmed Ben Bella</strong></p>
-                <p>Faculté des Sciences de la Nature et de la Vie | Département de Biotechnologie</p>
-                <p><strong>Niveau:</strong> 3ème année Licence Génétique</p>
-                <p><strong>Année universitaire:</strong> 2024-2025</p>
-                <p><strong>Enseignant:</strong> Dr Abdelkader ALLOUCHE - Maître de Conférences en Biologie</p>
-            </div>
-
-            <a href="#cours" class="cta-button">Accéder aux Ressources</a>
+        <h1>Aspect Génétique du Développement Embryonnaire</h1>
+        <p class="hero-subtitle">Maîtrisez les mécanismes du développement chez Drosophila melanogaster</p>
+        
+        <div class="hero-info">
+            <p><strong>🎓 Université d'Oran 1 - Ahmed Ben Bella</strong></p>
+            <p>Faculté des Sciences de la Nature et de la Vie | Département de Biotechnologie</p>
+            <p><strong>Niveau:</strong> 3ème année Licence Génétique | <strong>Année:</strong> 2024-2025</p>
+            <p><strong>Enseignant:</strong> Dr Abdelkader ALLOUCHE - Maître de Conférences en Biologie</p>
         </div>
+
+        <a href="#cours" class="cta-button">Accéder aux Ressources</a>
     </section>
 
-    <!-- Features/Courses Section -->
+    <!-- Features Section -->
     <section class="features" id="cours">
         <div class="container">
             <h2 class="section-title">Ressources Pédagogiques</h2>
-            <p class="section-subtitle">Accédez à l'ensemble des supports de cours et exercices</p>
+            <p class="section-subtitle">Accédez à l'ensemble des supports de cours</p>
 
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>Cours Complet</h3>
-                    <p>Tous les chapitres en HTML interactif sur la génétique du développement embryonnaire</p>
-                    <ul class="feature-list">
-                        <li>Développement embryonnaire précoce de Drosophila</li>
-                        <li>Signalisation terminale et activation Torso</li>
-                        <li>Ovogenèse et mise en place des axes</li>
-                        <li>Régulation maternelle des axes embryonnaires</li>
-                        <li>Gènes de segmentation et homéotiques</li>
-                    </ul>
+                <div class="feature-card" onclick="showSection('annonce')">
+                    <div class="feature-icon">📢</div>
+                    <h3>Annonce Importante</h3>
+                    <p>Mise en ligne des ressources pédagogiques et informations pratiques</p>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">✏️</div>
-                    <h3>Travaux Dirigés (TD)</h3>
-                    <p>Exercices avec corrigés détaillés sur les mécanismes embryonnaires</p>
-                    <ul class="feature-list">
-                        <li>Analyse de mutants du développement</li>
-                        <li>Étude des gradients de morphogènes</li>
-                        <li>Cascade de régulation génétique</li>
-                        <li>Cartographie des destins cellulaires</li>
-                        <li>Problèmes de génétique du développement</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📝</div>
-                    <h3>Contrôle Continu (CC)</h3>
-                    <p>Sujets et barèmes - Consultable après l'épreuve écrite</p>
-                    <ul class="feature-list">
-                        <li>Sujets d'examens des années précédentes</li>
-                        <li>Corrigés types détaillés</li>
-                        <li>Barèmes de notation</li>
-                        <li>Publication des notes sur Progres</li>
-                        <li>Analyse des erreurs fréquentes</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Examen Final (EF)</h3>
-                    <p>Sujets et corrigés types - Consultable après l'épreuve</p>
-                    <ul class="feature-list">
-                        <li>Sujets complets d'examens finaux</li>
-                        <li>Corrigés détaillés et commentés</li>
-                        <li>Conseils méthodologiques</li>
-                        <li>Publication des notes sur Progres</li>
-                        <li>Statistiques de réussite</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
+                <div class="feature-card" onclick="showSection('development')">
                     <div class="feature-icon">🔬</div>
-                    <h3>Thèmes Abordés</h3>
-                    <p>Contenu complet du module de développement</p>
-                    <ul class="feature-list">
-                        <li>Gènes du développement embryonnaire</li>
-                        <li>Modèle Drosophila melanogaster</li>
-                        <li>Gènes homéotiques et complexe Hox</li>
-                        <li>Gènes de segmentation</li>
-                        <li>Signalisation cellulaire et morphogènes</li>
-                    </ul>
+                    <h3>Développement Embryonnaire</h3>
+                    <p>Signalisation terminale, ovogenèse et mise en place des axes</p>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3>Caractéristiques</h3>
-                    <p>Des ressources modernes et accessibles</p>
-                    <ul class="feature-list">
-                        <li>Chapitres en HTML interactif</li>
-                        <li>Schémas et illustrations détaillés</li>
-                        <li>Accessible sur tous appareils</li>
-                        <li>Téléchargement hors-ligne possible</li>
-                        <li>Mises à jour régulières</li>
-                    </ul>
+                <div class="feature-card" onclick="showSection('regulation')">
+                    <div class="feature-icon">🧬</div>
+                    <h3>Régulation Maternelle</h3>
+                    <p>Axes Antéro-Postérieur et Dorso-Ventral</p>
+                </div>
+
+                <div class="feature-card" onclick="showSection('cycle')">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Cycle de Vie & Segmentation</h3>
+                    <p>Drosophila melanogaster et cascade de segmentation</p>
                 </div>
             </div>
         </div>
@@ -727,128 +580,100 @@
     <section class="video-section" id="video">
         <div class="container">
             <h2 class="section-title">Vidéo d'Annonce</h2>
-            <p class="section-subtitle">Présentation du module et des ressources disponibles</p>
+            <p class="section-subtitle">Présentation du module et des ressources</p>
 
             <div class="video-container">
-                <div class="video-placeholder">
-                    <div class="play-button"></div>
+                <div class="video-wrapper">
+                    <div class="video-placeholder" onclick="playVideo()">
+                        <div class="play-button"></div>
+                    </div>
                 </div>
                 <div class="video-info">
-                    <h3>Bienvenue dans le module Aspect Génétique du Développement Embryonnaire</h3>
+                    <h3>Bienvenue dans le module</h3>
                     <p>Découvrez dans cette vidéo :</p>
-                    <ul style="margin-left: 1.5rem; color: var(--text-light); line-height: 2;">
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem; color: #6b7280;">
                         <li>Les objectifs pédagogiques du cours</li>
                         <li>L'organisation des ressources en ligne</li>
-                        <li>Les modalités d'accès à la plateforme e-learning</li>
-                        <li>Les recommandations pour réussir ce module</li>
-                        <li>Les contacts et modalités d'évaluation</li>
+                        <li>Les modalités d'accès et d'évaluation</li>
+                        <li>Les recommandations pour réussir</li>
                     </ul>
-                    <p style="margin-top: 1rem; color: var(--text-light);"><em>Durée estimée: 10-15 minutes</em></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Slides Section -->
-    <section class="slides" id="slides">
+    <!-- Documents Section -->
+    <section class="documents" id="documents">
         <div class="container">
-            <h2 class="section-title">Supports de Cours</h2>
-            <p class="section-subtitle">Téléchargez ou consultez les présentations en ligne</p>
+            <h2 class="section-title">Documents de Cours</h2>
+            <p class="section-subtitle">Téléchargez ou consultez les supports</p>
 
-            <div class="slides-grid">
-                <div class="slide-card">
-                    <div class="slide-header">
-                        <div class="slide-number">01</div>
+            <div class="documents-grid">
+                <div class="doc-card">
+                    <div class="doc-header">
+                        <div class="doc-icon">📄</div>
+                        <h3>Annonce Bienvenue</h3>
                     </div>
-                    <div class="slide-content">
-                        <h4>Annonce Importante</h4>
+                    <div class="doc-content">
+                        <h4>Informations Générales</h4>
                         <ul>
-                            <li>Mise en ligne des ressources</li>
                             <li>Présentation du module</li>
-                            <li>Informations pratiques</li>
-                            <li>Modalités d'accès</li>
+                            <li>Ressources disponibles</li>
+                            <li>Comment accéder aux ressources</li>
+                            <li>Recommandations importantes</li>
                         </ul>
-                        <a href="#" class="download-btn">Consulter</a>
+                        <a href="annonce_bienvenue.html" class="doc-btn" target="_blank">Consulter</a>
                     </div>
                 </div>
 
-                <div class="slide-card">
-                    <div class="slide-header">
-                        <div class="slide-number">02</div>
+                <div class="doc-card">
+                    <div class="doc-header">
+                        <div class="doc-icon">📚</div>
+                        <h3>Développement Embryonnaire</h3>
                     </div>
-                    <div class="slide-content">
-                        <h4>Développement Embryonnaire</h4>
+                    <div class="doc-content">
+                        <h4>Partie 1 & 2</h4>
                         <ul>
                             <li>Signalisation terminale (Torso)</li>
+                            <li>Ovogenèse et axes maternels</li>
                             <li>Activation du récepteur</li>
                             <li>Cascade Ras/MAPK</li>
-                            <li>Gènes cibles zygotiques</li>
                         </ul>
-                        <a href="#" class="download-btn">Télécharger PDF</a>
+                        <a href="Cours_L3_Drosophila_Developpement.pdf" class="doc-btn" download>Télécharger PDF</a>
                     </div>
                 </div>
 
-                <div class="slide-card">
-                    <div class="slide-header">
-                        <div class="slide-number">03</div>
+                <div class="doc-card">
+                    <div class="doc-header">
+                        <div class="doc-icon">📖</div>
+                        <h3>Régulation Maternelle</h3>
                     </div>
-                    <div class="slide-content">
-                        <h4>Ovogenèse et Axes</h4>
+                    <div class="doc-content">
+                        <h4>Axes Embryonnaires</h4>
                         <ul>
-                            <li>Architecture de l'ovaire</li>
-                            <li>Germarium et GSC</li>
-                            <li>Stades de développement</li>
-                            <li>Signaux Gurken</li>
-                        </ul>
-                        <a href="#" class="download-btn">Télécharger PDF</a>
-                    </div>
-                </div>
-
-                <div class="slide-card">
-                    <div class="slide-header">
-                        <div class="slide-number">04</div>
-                    </div>
-                    <div class="slide-content">
-                        <h4>Régulation Maternelle</h4>
-                        <ul>
-                            <li>Gradient Bicoid (antérieur)</li>
-                            <li>Système Nanos/Oskar (postérieur)</li>
-                            <li>Cascade Dorsal-Ventral</li>
+                            <li>Système antérieur (Bicoid)</li>
+                            <li>Système postérieur (Nanos/Oskar)</li>
+                            <li>Système dorso-ventral (Dorsal)</li>
                             <li>Intégration des systèmes</li>
                         </ul>
-                        <a href="#" class="download-btn">Télécharger PDF</a>
+                        <a href="Cours_L3_Regulation_Maternelle_Axes_Drosophila.pdf" class="doc-btn" download>Télécharger PDF</a>
                     </div>
                 </div>
 
-                <div class="slide-card">
-                    <div class="slide-header">
-                        <div class="slide-number">05</div>
+                <div class="doc-card">
+                    <div class="doc-header">
+                        <div class="doc-icon">📝</div>
+                        <h3>Cycle de Vie & Segmentation</h3>
                     </div>
-                    <div class="slide-content">
-                        <h4>Cycle de Vie Drosophila</h4>
+                    <div class="doc-content">
+                        <h4>Développement Complet</h4>
                         <ul>
+                            <li>Cycle de vie Drosophila</li>
                             <li>Ovogenèse et structure de l'œuf</li>
-                            <li>Fécondation et segmentation</li>
-                            <li>Gastrulation</li>
                             <li>Cascade de segmentation</li>
+                            <li>Gènes homéotiques</li>
                         </ul>
-                        <a href="#" class="download-btn">Télécharger DOCX</a>
-                    </div>
-                </div>
-
-                <div class="slide-card">
-                    <div class="slide-header">
-                        <div class="slide-number">06</div>
-                    </div>
-                    <div class="slide-content">
-                        <h4>Gènes de Segmentation</h4>
-                        <ul>
-                            <li>Gènes gap</li>
-                            <li>Gènes pair-rule</li>
-                            <li>Polarité segmentaire</li>
-                            <li>Gènes homéotiques Hox</li>
-                        </ul>
-                        <a href="#" class="download-btn">Bientôt disponible</a>
+                        <a href="Le cycle de vie de Drosophila melanogaster et la régulation génétique du développement embryonnaire jusqu'au stade segmentation.docx" class="doc-btn" download>Télécharger DOCX</a>
                     </div>
                 </div>
             </div>
@@ -859,67 +684,48 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Contact & Informations</h2>
-            <p class="section-subtitle">Besoin d'aide ou d'informations complémentaires ?</p>
+            <p class="section-subtitle">Besoin d'aide ou d'informations ?</p>
 
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h3>Informations de Contact</h3>
                     
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">👨‍🏫</div>
-                            <div>
-                                <strong>Enseignant Responsable</strong>
-                                <p>Dr Abdelkader ALLOUCHE<br>Maître de Conférences en Biologie</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">🏛️</div>
-                            <div>
-                                <strong>Université</strong>
-                                <p>Université d'Oran 1 - Ahmed Ben Bella<br>Faculté des Sciences de la Nature et de la Vie</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">🔬</div>
-                            <div>
-                                <strong>Département</strong>
-                                <p>Département de Biotechnologie<br>Laboratoire de Génétique du Développement</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">💻</div>
-                            <div>
-                                <strong>Plateforme E-Learning</strong>
-                                <p><a href="https://elearning.univ-oran1.dz" style="color: var(--primary-color);">https://elearning.univ-oran1.dz</a><br>Accès avec identifiants universitaires</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">📧</div>
-                            <div>
-                                <strong>Contact</strong>
-                                <p>Via la messagerie de la plateforme e-learning<br>ou lors des séances de cours/TD</p>
-                            </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">👨‍🏫</div>
+                        <div>
+                            <strong>Enseignant</strong>
+                            <p>Dr Abdelkader ALLOUCHE<br>Maître de Conférences en Biologie</p>
                         </div>
                     </div>
 
-                    <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
-                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">⚠️ Important</h4>
-                        <p style="color: var(--text-light);">Les sujets de Contrôle Continu et d'Examen Final seront mis à disposition pour consultation uniquement après :</p>
-                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-light);">
-                            <li>Le déroulement de l'épreuve écrite en salle d'examen</li>
-                            <li>Le rendu des notes sur la plateforme Progres</li>
-                        </ul>
+                    <div class="contact-item">
+                        <div class="contact-icon">🏛️</div>
+                        <div>
+                            <strong>Université</strong>
+                            <p>Université d'Oran 1 - Ahmed Ben Bella<br>Faculté des Sciences de la Nature et de la Vie</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💻</div>
+                        <div>
+                            <strong>Plateforme</strong>
+                            <p><a href="https://elearning.univ-oran1.dz" style="color: var(--primary);">elearning.univ-oran1.dz</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Contact</strong>
+                            <p>Via la messagerie de la plateforme e-learning</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="contact-form">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.5rem;">Envoyer un Message</h3>
-                    <form action="#" method="POST">
+                    <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Envoyer un Message</h3>
+                    <form onsubmit="handleSubmit(event)">
                         <div class="form-group">
                             <label for="nom">Nom Complet *</label>
                             <input type="text" id="nom" name="nom" required placeholder="Votre nom et prénom">
@@ -942,7 +748,7 @@
 
                         <div class="form-group">
                             <label for="message">Message *</label>
-                            <textarea id="message" name="message" required placeholder="Votre message..."></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
                         </div>
 
                         <button type="submit" class="submit-btn">Envoyer le Message</button>
@@ -957,14 +763,21 @@
         <p>&copy; 2024-2025 Université d'Oran 1 - Ahmed Ben Bella | Tous droits réservés</p>
         <p style="margin-top: 0.5rem;">
             <a href="https://github.com/kader68Biology" target="_blank">GitHub</a> | 
-            <a href="https://kader68biology.github.io/Drosophila-Dev-Control/" target="_blank">GitHub Pages</a> | 
-            <a href="https://elearning.univ-oran1.dz" target="_blank">E-Learning</a>
+            <a href="https://kader68biology.github.io/Drosophila-Dev-Control/" target="_blank">GitHub Pages</a>
         </p>
         <p style="margin-top: 1rem; font-size: 0.9rem;">
             Dr Abdelkader ALLOUCHE - Maître de Conférences en Biologie<br>
-            Département de Biotechnologie - Faculté des Sciences de la Nature et de la Vie
+            Département de Biotechnologie
         </p>
     </footer>
+
+    <!-- Modal for Content Display -->
+    <div id="contentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
 
     <script>
         // Mobile Menu Toggle
@@ -973,33 +786,172 @@
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
 
-        // Smooth Scroll for Navigation Links
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Form Submission Handler
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // Show Section Content
+        function showSection(section) {
+            const modal = document.getElementById('contentModal');
+            const modalBody = document.getElementById('modalBody');
+            
+            let content = '';
+            
+            switch(section) {
+                case 'annonce':
+                    content = `
+                        <h2 style="color: var(--primary); margin-bottom: 1rem;">Annonce Importante</h2>
+                        <h3 style="color: var(--secondary); margin-bottom: 1rem;">Mise en ligne des Ressources Pédagogiques</h3>
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <p><strong>Université d'Oran 1 - Ahmed Ben Bella</strong></p>
+                            <p>Faculté des Sciences de la Nature et de la Vie</p>
+                            <p>Département de Biotechnologie</p>
+                            <p style="margin-top: 1rem;"><strong>Module:</strong> Aspect Génétique du Développement Embryonnaire</p>
+                            <p><strong>Niveau:</strong> 3ème année Licence Génétique</p>
+                            <p><strong>Année universitaire:</strong> 2024 - 2025</p>
+                        </div>
+                        <h4 style="color: var(--primary); margin-bottom: 1rem;">Ressources Disponibles:</h4>
+                        <ul style="margin-left: 1.5rem; line-height: 2;">
+                            <li>Cours complet - Tous les chapitres en HTML interactif</li>
+                            <li>Travaux Dirigés (TD) - Exercices avec corrigés détaillés</li>
+                            <li>Contrôle Continu (CC) - Sujets avec barèmes</li>
+                            <li>Examen Final (EF) - Sujets avec corrigés types</li>
+                        </ul>
+                        <p style="margin-top: 1.5rem;"><strong>Dr Abdelkader ALLOUCHE</strong><br>Maître de Conférences en Biologie</p>
+                    `;
+                    break;
+                    
+                case 'development':
+                    content = `
+                        <h2 style="color: var(--primary); margin-bottom: 1rem;">Développement Embryonnaire Précoce</h2>
+                        <h3 style="color: var(--secondary); margin-bottom: 1rem;">Drosophila melanogaster</h3>
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <h4 style="margin-bottom: 1rem;">PARTIE 1: Signalisation Terminale (Torso)</h4>
+                            <ul style="margin-left: 1.5rem; line-height: 2;">
+                                <li>Restriction spatiale de l'activation de Torso</li>
+                                <li>Acteurs moléculaires: Torso, Trunk, Torso-like</li>
+                                <li>Origine de l'information spatiale (cellules folliculaires)</li>
+                                <li>Mécanisme d'activation locale (clivage du ligand)</li>
+                                <li>Cascade intracellulaire Ras/MAPK</li>
+                                <li>Activation des gènes zygotiques par dérépression</li>
+                                <li>Gradient d'activité et seuils (tailless, huckebein)</li>
+                            </ul>
+                        </div>
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: 8px;">
+                            <h4 style="margin-bottom: 1rem;">PARTIE 2: Ovogenèse et Axes Maternels</h4>
+                            <ul style="margin-left: 1.5rem; line-height: 2;">
+                                <li>Architecture de l'ovaire et unité fonctionnelle</li>
+                                <li>Germarium: GSC, divisions, spécification ovocyte</li>
+                                <li>Stades précoces (1–6): croissance, endoréplication</li>
+                                <li>Stades 7–10: signaux Gurken, axes AP et DV</li>
+                                <li>Localisation des ARNm maternels</li>
+                                <li>Stades tardifs (10B–14): dumping, enveloppes</li>
+                                <li>Activation de l'ovocyte et fécondation</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'regulation':
+                    content = `
+                        <h2 style="color: var(--primary); margin-bottom: 1rem;">Régulation Maternelle des Axes</h2>
+                        <h3 style="color: var(--secondary); margin-bottom: 1rem;">Axes Antéro-Postérieur et Dorso-Ventral</h3>
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <h4 style="margin-bottom: 1rem;">SYSTÈME ANTÉRIEUR: Gradient BICOID</h4>
+                            <ul style="margin-left: 1.5rem; line-height: 2;">
+                                <li>Localisation de bicoid mRNA → gradient protéique A→P</li>
+                                <li>Bicoid: activateur transcriptionnel (hunchback)</li>
+                                <li>Répresseur traductionnel (caudal)</li>
+                                <li>Interprétation de seuils de concentration</li>
+                            </ul>
+                        </div>
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <h4 style="margin-bottom: 1rem;">SYSTÈME POSTÉRIEUR: OSKAR → NANOS</h4>
+                            <ul style="margin-left: 1.5rem; line-height: 2;">
+                                <li>Cascade: oskar → plasma germinatif → piégeage nanos</li>
+                                <li>Nanos + Pumilio: répression de hunchback</li>
+                                <li>Gradient P→A et spécification abdominale</li>
+                            </ul>
+                        </div>
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: 8px;">
+                            <h4 style="margin-bottom: 1rem;">SYSTÈME DORSO-VENTRAL: PIPE → TOLL → DORSAL</h4>
+                            <ul style="margin-left: 1.5rem; line-height: 2;">
+                                <li>Pipe (ventral) → modification membrane vitelline</li>
+                                <li>Cascade protéolytique → Spätzle actif</li>
+                                <li>Toll → dégradation Cactus → Dorsal nucléaire</li>
+                                <li>Gradient nucléaire Dorsal → 3 territoires DV</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'cycle':
+                    content = `
+                        <h2 style="color: var(--primary); margin-bottom: 1rem;">Cycle de Vie & Segmentation</h2>
+                        <h3 style="color: var(--secondary); margin-bottom: 1rem;">Drosophila melanogaster</h3>
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <h4 style="margin-bottom: 1rem;">CYCLE DE VIE</h4>
+                            <ul style="margin-left: 1.5rem; line-height: 2;">
+                                <li>Embryon (~24 h)</li>
+                                <li>Larve L1, L2, L3 (~4 jours)</li>
+                                <li>Pupe (~4-5 jours)</li>
+                                <li>Adulte (imago)</li>
+                            </ul>
+                        </div>
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <h4 style="margin-bottom: 1rem;">CASCADE DE SEGMENTATION</h4>
+                            <ul style="margin-left: 1.5rem; line-height: 2;">
+                                <li>Gènes maternels (bicoid, nanos, torso, dorsal)</li>
+                                <li>Gènes gap (hunchback, Krüppel, knirps, giant)</li>
+                                <li>Gènes pair-rule (eve, ftz, hairy, runt...)</li>
+                                <li>Gènes de polarité segmentaire (engrailed, wingless, hedgehog)</li>
+                                <li>Gènes homéotiques Hox (ANT-C, BX-C)</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+            }
+            
+            modalBody.innerHTML = content;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close Modal
+        function closeModal() {
+            const modal = document.getElementById('contentModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('contentModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Play Video
+        function playVideo() {
+            alert('La vidéo d\\'annonce sera bientôt disponible sur la plateforme e-learning.\\n\\nPour le moment, veuillez consulter les documents PDF disponibles dans la section Documents.');
+        }
+
+        // Form Submit
+        function handleSubmit(e) {
             e.preventDefault();
-            alert('Merci pour votre message ! Vous serez contacté dans les plus brefs délais.');
-            this.reset();
-        });
+            alert('Merci pour votre message !\\n\\nVous serez contacté dans les plus brefs délais via votre email universitaire.');
+            e.target.reset();
+        }
 
-        // Play Button Animation
-        document.querySelector('.play-button').addEventListener('click', function() {
-            alert('La vidéo sera bientôt disponible sur la plateforme e-learning');
-        });
-
-        // Add scroll effect to navigation
+        // Scroll effect for navigation
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
