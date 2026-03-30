@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contenu du Cours - Drosophila Dev</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        .moodle-section { border: 1px solid #ddd; margin-bottom: 20px; padding: 15px; border-radius: 5px; }
-        .moodle-header { background: #f9f9f9; padding: 10px; border-bottom: 2px solid #0f388f; font-weight: bold; }
-        .resource-list { list-style: none; padding: 0; }
-        .resource-item { padding: 10px; border-bottom: 1px solid #eee; }
-        .btn-download { background: #0f388f; color: white; padding: 5px 10px; text-decoration: none; border-radius: 3px; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f4f4f4; }
+        .container { width: 90%; max-width: 1200px; margin: auto; overflow: hidden; padding: 20px; }
+        .navbar { background: #0f388f; color: #fff; padding: 10px 0; border-bottom: 3px solid #0056b3; }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .navbar a { color: #fff; text-decoration: none; padding: 0 15px; }
+        .moodle-section { background: #fff; border: 1px solid #ddd; margin-bottom: 20px; border-radius: 5px; }
+        .moodle-header { background: #f9f9f9; padding: 15px; border-bottom: 2px solid #0f388f; font-weight: bold; font-size: 1.2rem; }
+        .section-content { padding: 20px; }
+        .btn-download { display: inline-block; background: #0f388f; color: #fff; padding: 10px 15px; text-decoration: none; border-radius: 4px; margin-top: 10px; }
+        .footer { background: #333; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
+        iframe { width: 100%; height: 600px; border: 1px solid #ccc; margin-top: 15px; }
+        .interactive-note { background: #e7f3ff; padding: 10px; border-left: 4px solid #0f388f; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -18,73 +24,70 @@
 <nav class="navbar">
     <div class="container">
         <a class="navbar-brand" href="index.html">Drosophila-Dev | Univ Oran 1</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="courses.html">Contenu du Cours</a></li>
-            <li><a href="instructor.html">Enseignant</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="courses.html">Contenu du Cours</a>
+            <a href="instructor.html">Enseignant</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </div>
 </nav>
 
 <div class="container main-content">
-    <h2>Contenu Pédagogique</h2>
-    <p>Accédez ci-dessous aux chapitres, documents PDF et vidéos associés.</p>
+    <h2>Contenu Pédagogique & Activités</h2>
+    <p>Accédez ci-dessous aux chapitres, documents PDF et activités interactives.</p>
 
-    <!-- Chapitre 1 -->
+    <!-- Chapitre 1 : Ovogenèse & Régulation -->
     <div class="moodle-section">
-        <div class="moodle-header">Chapitre 1 : Développement Embryonnaire</div>
+        <div class="moodle-header">Chapitre 1 : Ovogenèse et Régulation Initiale</div>
         <div class="section-content">
             <p>Signalisation terminale, ovogenèse et mise en place des axes.</p>
-            <ul class="resource-list">
-                <li class="resource-item">
-                    <strong>📄 Cours PDF (Partie 1 & 2)</strong><br>
-                    Signalisation terminale (Torso), Activation du récepteur, Cascade Ras/MAPK.
-                    <br>
-                    <!-- LIEN VERS VOTRE PDF -->
-                    <a href="documents/Cours_L3_Drosophila_Developpement.pdf" class="btn-download" target="_blank">Télécharger PDF</a>
-                </li>
-                <li class="resource-item">
-                    <strong>🎥 Vidéo Complémentaire</strong>
-                    <br>
-                    <!-- PLACEHOLDER VIDEO -->
-                    <span style="color:gray;">[Vidéo Chapitre 1 - MP4 à intégrer]</span>
-                </li>
-            </ul>
+            
+            <div class="interactive-note">
+                <strong>🎮 Activité Interactive :</strong> Comprendre la régulation de l'ovogenèse.
+            </div>
+            <iframe src="activities/OvoRegFinal_interactif.html" title="Interactive Oogenesis"></iframe>
+            
+            <div style="margin-top: 20px;">
+                <strong>📄 Supports de Cours :</strong><br>
+                <a href="documents/Cours1_Synthese_Drosophila_20260302.pdf" class="btn-download" target="_blank">Télécharger Synthèse PDF</a>
+            </div>
         </div>
     </div>
 
-    <!-- Chapitre 2 -->
+    <!-- Chapitre 2 : Axes Embryonnaires -->
     <div class="moodle-section">
-        <div class="moodle-header">Chapitre 2 : Régulation Maternelle</div>
+        <div class="moodle-header">Chapitre 2 : Axes Antéro-Postérieur et Dorso-Ventral</div>
         <div class="section-content">
-            <p>Axes Antéro-Postérieur et Dorso-Ventral.</p>
-            <ul class="resource-list">
-                <li class="resource-item">
-                    <strong>📄 Cours PDF</strong><br>
-                    Système antérieur (Bicoid), Système postérieur (Nanos/Oskar), Système dorso-ventral (Dorsal).
-                    <br>
-                    <!-- LIEN VERS VOTRE PDF -->
-                    <a href="documents/Cours_L3_Regulation_Maternelle_Axes_Drosophila.pdf" class="btn-download" target="_blank">Télécharger PDF</a>
-                </li>
-            </ul>
+            <p>Établissement des axes embryonnaires et gradients de morphogènes.</p>
+            
+            <div class="interactive-note">
+                <strong>🎮 Activité Interactive 1 :</strong> Les Axes AP/DV.
+            </div>
+            <iframe src="activities/TD2_axesAPDV_interactif.html" title="Interactive Axes"></iframe>
+
+            <div class="interactive-note" style="margin-top: 20px;">
+                <strong>🎮 Activité Interactive 2 :</strong> Diagrammes Antéro-Postérieurs.
+            </div>
+            <iframe src="activities/Diagrammes_AP_Interactif.html" title="Interactive Diagrams"></iframe>
+            
+            <div style="margin-top: 20px;">
+                <strong>📄 Supports de Cours :</strong><br>
+                <a href="documents/Cours1_Synthese_Session2_20260302.pdf" class="btn-download" target="_blank">Télécharger Session 2 PDF</a>
+            </div>
         </div>
     </div>
 
-    <!-- Chapitre 3 -->
+    <!-- Chapitre 3 : Travaux Dirigés -->
     <div class="moodle-section">
-        <div class="moodle-header">Chapitre 3 : Cycle de Vie & Segmentation</div>
+        <div class="moodle-header">Chapitre 3 : Travaux Dirigés (TD)</div>
         <div class="section-content">
-            <p>Drosophila melanogaster et cascade de segmentation.</p>
-            <ul class="resource-list">
-                <li class="resource-item">
-                    <strong>📄 Document DOCX/PDF</strong><br>
-                    Cycle de vie, Ovogenèse, Gènes homéotiques.
-                    <br>
-                    <!-- LIEN VERS VOTRE DOCX/PDF -->
-                    <a href="documents/Le_cycle_de_vie_de_Drosophila.docx" class="btn-download" target="_blank">Télécharger Document</a>
-                </li>
-            </ul>
+            <p>Exercices pratiques et études de cas.</p>
+            
+            <div class="interactive-note">
+                <strong>🎮 TD 4 Interactif :</strong> Exercices d'application.
+            </div>
+            <iframe src="activities/TD4_interactive.html" title="TD 4 Interactive"></iframe>
         </div>
     </div>
 
