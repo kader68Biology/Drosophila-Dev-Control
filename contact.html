@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Drosophila Dev</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f4f4f4; }
+        .container { width: 90%; max-width: 1200px; margin: auto; overflow: hidden; padding: 20px; }
+        .navbar { background: #0f388f; color: #fff; padding: 10px 0; border-bottom: 3px solid #0056b3; }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .navbar a { color: #fff; text-decoration: none; padding: 0 15px; }
+        .footer { background: #333; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
+        .contact-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+        .contact-box { background: #fff; padding: 20px; border: 1px solid #ddd; flex: 1; min-width: 300px; border-radius: 5px; }
+        input, textarea { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; }
+        button { background: #0f388f; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+    </style>
 </head>
 <body>
 
 <nav class="navbar">
     <div class="container">
         <a class="navbar-brand" href="index.html">Drosophila-Dev | Univ Oran 1</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="courses.html">Contenu du Cours</a></li>
-            <li><a href="instructor.html">Enseignant</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="courses.html">Contenu du Cours</a>
+            <a href="instructor.html">Enseignant</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </div>
 </nav>
 
 <div class="container main-content">
     <h2>Contact & Informations</h2>
     
-    <div class="contact-grid" style="display: flex; gap: 20px; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 300px;">
+    <div class="contact-grid">
+        <div class="contact-box">
             <h3>Coordonnées Universitaires</h3>
             <p><strong>Université :</strong> Université d'Oran 1 - Ahmed Ben Bella</p>
             <p><strong>Faculté :</strong> Sciences de la Nature et de la Vie</p>
@@ -33,27 +44,22 @@
             <p><strong>Plateforme :</strong> <a href="https://elearning.univ-oran1.dz">elearning.univ-oran1.dz</a></p>
         </div>
 
-        <div style="flex: 1; min-width: 300px;">
+        <div class="contact-box">
             <h3>Envoyer un Message</h3>
-            <p>Pour toute question relative au module, veuillez utiliser la messagerie de la plateforme e-learning ou envoyer un email.</p>
             <form action="mailto:allouche.abdelkader@uiv-oran1.dz" method="post" enctype="text/plain">
-                <div style="margin-bottom: 10px;">
-                    <label>Nom Complet *</label><br>
-                    <input type="text" name="name" required style="width: 100%; padding: 5px;">
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <label>Email Universitaire *</label><br>
-                    <input type="email" name="email" required style="width: 100%; padding: 5px;">
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <label>Numéro de Matricule *</label><br>
-                    <input type="text" name="matricule" required style="width: 100%; padding: 5px;">
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <label>Message *</label><br>
-                    <textarea name="message" rows="5" required style="width: 100%; padding: 5px;"></textarea>
-                </div>
-                <button type="submit" style="background:#0f388f; color:white; padding:10px 20px; border:none; cursor:pointer;">Envoyer le Message</button>
+                <label>Nom Complet *</label>
+                <input type="text" name="name" required>
+                
+                <label>Email Universitaire *</label>
+                <input type="email" name="email" required>
+                
+                <label>Numéro de Matricule *</label>
+                <input type="text" name="matricule" required>
+                
+                <label>Message *</label>
+                <textarea name="message" rows="5" required></textarea>
+                
+                <button type="submit">Envoyer le Message</button>
             </form>
         </div>
     </div>
