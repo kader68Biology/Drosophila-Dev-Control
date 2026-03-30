@@ -7,20 +7,35 @@ Il est structuré pour ressembler à une plateforme LMS (type Moodle) afin de fa
 
 ## Structure du Site
 - **index.html** : Page d'accueil et tableau de bord du cours.
-- **courses.html** : Contenu pédagogique (Chapitres, PDF, Vidéos).
+- **courses.html** : Contenu pédagogique (Chapitres, PDF, Vidéos, Interactifs).
 - **instructor.html** : Profile de l'enseignant (Dr Abdelkader ALLOUCHE).
 - **contact.html** : Coordonnées et formulaire de contact.
 
-## Instructions pour l'ajout de fichiers (PDF & MP4)
+## Fichiers et Ressources
+### Documents (PDF)
+- `documents/Cours1_Synthese_Drosophila_20260302.pdf`
+- `documents/Cours1_Synthese_Session2_20260302.pdf`
 
-1.  **Créer un dossier `documents`** à la racine du projet pour y placer vos fichiers PDF.
-2.  **Créer un dossier `videos`** à la racine du projet pour y placer vos fichiers MP4.
-3.  **Mettre à jour les liens** dans `courses.html` et `index.html` pour pointer vers vos fichiers.
+### Activités Interactives (HTML)
+- `activities/annonce_bienvenue.html`
+- `activities/TD4_interactive.html`
+- `activities/Diagrammes_AP_Interactif.html`
+- `activities/TD2_axesAPDV_interactif.html`
+- `activities/OvoRegFinal_interactif.html`
 
-### Exemple d'intégration Vidéo (HTML5)
-Dans `index.html` ou `courses.html`, remplacez le placeholder par :
-```html
-<video controls width="100%">
-    <source src="videos/votre_fichier.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la balise vidéo.
-</video>
+### Vidéos (MP4)
+- `videos/annonce_etudiants.mp4`
+
+## Instructions d'Utilisation
+1. **Navigation :** Utilisez la barre de menu pour accéder aux cours et contacts.
+2. **Interactivité :** Les fichiers HTML interactifs sont intégrés directement dans la page `courses.html` via des iframes.
+3. **Vidéo :** La vidéo d'introduction est disponible sur la page d'accueil.
+4. **Téléchargement :** Les PDF s'ouvrent dans un nouvel onglet pour consultation ou téléchargement.
+
+## Accès
+- 🌐 Site web : [https://kader68biology.github.io/Drosophila-Dev/](https://kader68biology.github.io/Drosophila-Dev/)
+
+## Contact
+- **Enseignant :** Dr Abdelkader ALLOUCHE
+- **Université :** Université d'Oran 1 - Ahmed Ben Bella
+- **Email :** allouche.abdelkader@uiv-oran1.dz
