@@ -3,1321 +3,1009 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Learning Drosophila - L3 Biotechnologie</title>
+    <title>Aspect Génétique du Développement Embryonnaire - L3 Génétique</title>
+    <meta name="description" content="Ressources pédagogiques pour le module Aspect Génétique du Développement Embryonnaire - Université d'Oran 1">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #dc2626;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f3f4f6;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
         }
-        
-        .container {
+
+        /* Navigation */
+        nav {
+            background: var(--gradient);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-        
-        .header h1 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-        
-        .header p {
-            color: #666;
-            font-size: 1.1em;
-        }
-        
-        .login-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .login-form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-            color: #555;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus {
-            border-color: #667eea;
-            outline: none;
-        }
-        
-        .btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: transform 0.2s;
-            width: 100%;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        .btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .content-section {
-            display: none;
-        }
-        
-        .tabs {
-            display: flex;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px 15px 0 0;
-            overflow: hidden;
-            margin-bottom: 0;
-        }
-        
-        .tab-btn {
-            flex: 1;
-            padding: 15px;
-            background: #f8f9fa;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            color: #666;
-            transition: all 0.3s;
-        }
-        
-        .tab-btn.active {
-            background: #667eea;
-            color: white;
-        }
-        
-        .tab-content {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 0 0 15px 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px;
-        }
-        
-        .chapter {
-            margin-bottom: 30px;
-            padding: 20px;
-            border-left: 4px solid #667eea;
-            background: #f8f9fa;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .chapter h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            cursor: pointer;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .chapter h3:hover {
-            color: #5a67d8;
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
         }
-        
-        .chapter-content {
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .mobile-menu {
             display: none;
-            margin-top: 15px;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
-        
-        .chapter-content.active {
-            display: block;
-        }
-        
-        .video-container {
+
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
             position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            margin: 20px 0;
-            border-radius: 10px;
             overflow: hidden;
         }
-        
-        .video-container iframe {
+
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
         }
-        
-        .qcm-section {
-            background: #f8f9fa;
-            padding: 20px;
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-info {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
             border-radius: 10px;
-            margin: 20px 0;
+            margin: 2rem 0;
+            animation: fadeInUp 1s ease 0.4s both;
         }
-        
-        .question {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        .hero-info p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
         }
-        
-        .options {
-            margin-top: 10px;
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+            animation: fadeInUp 1s ease 0.6s both;
         }
-        
-        .option {
-            margin: 8px 0;
-            padding: 10px;
-            background: #e9ecef;
-            border-radius: 5px;
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Features/Courses Section */
+        .features {
+            background: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: var(--white);
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        .play-button::after {
+            content: '▶';
+            color: var(--white);
+            font-size: 2rem;
+            margin-left: 5px;
+        }
+
+        .video-info {
+            padding: 2rem;
+        }
+
+        .video-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Slides Section */
+        .slides {
+            background: var(--bg-light);
+        }
+
+        .slides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .slide-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .slide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .slide-header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .slide-number {
+            font-size: 2rem;
+            font-weight: bold;
+            opacity: 0.9;
+        }
+
+        .slide-content {
+            padding: 1.5rem;
+        }
+
+        .slide-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .slide-content ul {
+            list-style: none;
+            color: var(--text-light);
+        }
+
+        .slide-content li {
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .slide-content li::before {
+            content: '•';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .download-btn {
+            display: block;
+            text-align: center;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem;
+            text-decoration: none;
+            margin: 1rem;
+            border-radius: 5px;
             transition: background 0.3s;
         }
-        
-        .option:hover {
-            background: #dee2e6;
+
+        .download-btn:hover {
+            background: var(--secondary-color);
         }
-        
-        .option.selected {
-            background: #667eea;
-            color: white;
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
         }
-        
-        .students-list {
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .contact-item div strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item div p {
+            color: var(--text-light);
+        }
+
+        .contact-form {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+            padding: 0.8rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
         }
-        
-        .students-list th,
-        .students-list td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
         }
-        
-        .students-list th {
-            background: #667eea;
-            color: white;
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
         }
-        
-        .students-list tr:nth-child(even) {
-            background: #f8f9fa;
-        }
-        
-        .grade {
-            font-weight: bold;
-        }
-        
-        .present {
-            color: #28a745;
-            font-weight: bold;
-        }
-        
-        .absent {
-            color: #dc3545;
-            font-weight: bold;
-        }
-        
-        .admin-panel {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        .success {
-            color: #28a745;
-            font-weight: bold;
-        }
-        
-        .error {
-            color: #dc3545;
-            font-weight: bold;
-        }
-        
-        .logout-btn {
-            background: #dc3545;
-            color: white;
-            padding: 8px 16px;
+
+        .submit-btn {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
             cursor: pointer;
-            float: right;
+            width: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        
-        .logout-btn:hover {
-            background: #c82333;
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.4);
         }
-        
-        .toggle-icon {
-            font-size: 1.2em;
-            transition: transform 0.3s;
-        }
-        
-        .toggle-icon.rotated {
-            transform: rotate(180deg);
-        }
-        
-        .loading {
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
             text-align: center;
-            padding: 20px;
+            padding: 2rem;
         }
-        
-        .loading-spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #667eea;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
         }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+
+        footer a:hover {
+            text-decoration: underline;
         }
-        
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
+            .nav-links {
+                display: none;
             }
-            
-            .header h1 {
-                font-size: 2em;
+
+            .mobile-menu {
+                display: block;
             }
-            
-            .tabs {
-                flex-direction: column;
+
+            .hero {
+                padding: 4rem 1.5rem;
             }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .features-grid,
+            .slides-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🎓 E-Learning Drosophila</h1>
-            <p>Module : Aspects Génétiques du Développement Embryonnaire - L3 Biotechnologie</p>
-            <p>Faculté des Sciences ABB - Département de Biotechnologie</p>
-            <p>Enseignant: Dr. A. ALLOUCHE</p>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">🧬 Drosophila Dev</a>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#cours">Cours</a></li>
+                <li><a href="#video">Vidéo</a></li>
+                <li><a href="#slides">Slides</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">☰</div>
         </div>
+    </nav>
 
-        <!-- Login Section -->
-        <div class="login-section" id="loginSection">
-            <div class="login-form">
-                <h2 style="text-align: center; margin-bottom: 20px; color: #667eea;">🔐 Connexion</h2>
-                <div class="form-group">
-                    <label for="username">Nom d'utilisateur:</label>
-                    <input type="text" id="username" placeholder="Votre nom complet">
-                </div>
-                <div class="form-group">
-                    <label for="password">Mot de passe:</label>
-                    <input type="password" id="password" placeholder="Mot de passe">
-                </div>
-                <button class="btn" onclick="login()" id="loginBtn">Se connecter</button>
-                <div id="loginMessage" style="margin-top: 15px; text-align: center;"></div>
-            </div>
-        </div>
-
-        <!-- Content Section (Hidden by default) -->
-        <div class="content-section" id="contentSection">
-            <button class="logout-btn" onclick="logout()">Déconnexion</button>
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <h1>Aspect Génétique du Développement Embryonnaire</h1>
+            <p class="hero-subtitle>Maîtrisez les mécanismes fondamentaux du développement embryonnaire chez Drosophila melanogaster</p>
             
-            <!-- Tabs -->
-            <div class="tabs">
-                <button class="tab-btn active" onclick="showTab('cours')">📚 Cours</button>
-                <button class="tab-btn" onclick="showTab('qcm')">📝 QCM</button>
-                <button class="tab-btn" onclick="showTab('etudiants')">👥 Étudiants</button>
-                <button class="tab-btn" onclick="showTab('admin')" id="adminTab" style="display: none;">⚙️ Admin</button>
+            <div class="hero-info">
+                <p><strong>🎓 Université d'Oran 1 - Ahmed Ben Bella</strong></p>
+                <p>Faculté des Sciences de la Nature et de la Vie | Département de Biotechnologie</p>
+                <p><strong>Niveau:</strong> 3ème année Licence Génétique</p>
+                <p><strong>Année universitaire:</strong> 2024-2025</p>
+                <p><strong>Enseignant:</strong> Dr Abdelkader ALLOUCHE - Maître de Conférences en Biologie</p>
             </div>
 
-            <!-- Cours Tab -->
-            <div class="tab-content" id="coursTab">
-                <h2>📖 Cours - Développement Embryonnaire de Drosophila</h2>
-                
-                <!-- Chapter 1 -->
-                <div class="chapter">
-                    <h3 onclick="toggleChapter('chapter1')">
-                        <span>Chapitre 1: Embryogenèse Comparée</span>
-                        <span class="toggle-icon" id="toggle-icon-1">▼</span>
-                    </h3>
-                    <div class="chapter-content" id="chapter1">
-                        <p><strong>Objectifs:</strong> Comprendre les grandes étapes du développement chez les amphibiens, échinodermes et arthropodes.</p>
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/8ILQOFAgaXE" allowfullscreen></iframe>
-                        </div>
-                        <h4>Contenu détaillé :</h4>
-                        <p><strong>Amphibiens (ex. Xénopus laevis) :</strong></p>
-                        <ul>
-                            <li><strong>Cleavage</strong> : Division cellulaire rapide sans croissance, formant une <strong>morula</strong>.</li>
-                            <li><strong>Blastulation</strong> : Formation d'un <strong>blastocyste</strong> avec une cavité centrale (blastocele).</li>
-                            <li><strong>Gastrulation</strong> : Réorganisation des cellules en trois couches germinales (ectoderme, mésoderme, endoderme) via des mouvements d'<strong>invagination</strong>, d'<strong>ingression</strong> et d'<strong>épithélisation</strong>.</li>
-                            <li><strong>Neurulation</strong> : Formation du <strong>tube neural</strong> par plissement de l'ectoderme.</li>
-                        </ul>
-                        
-                        <p><strong>Échinodermes (ex. oursin de mer) :</strong></p>
-                        <ul>
-                            <li><strong>Cleavage</strong> : Division égale et radiale, formant un <strong>blastocyste</strong> sphérique.</li>
-                            <li><strong>Blastulation</strong> : Le blastocyste est entouré d'une membrane vitelline.</li>
-                            <li><strong>Gastrulation</strong> : Invagination du mésoderme pour former le <strong>primitif archentéron</strong>.</li>
-                            <li><strong>Métamorphose</strong> : Les larves pléurotomes se transforment en adultes via la réorganisation des structures.</li>
-                        </ul>
-                        
-                        <p><strong>Arthropodes (ex. <em>Drosophila melanogaster</em>) :</strong></p>
-                        <ul>
-                            <li><strong>Cleavage</strong> : Division synchronisée de l'œuf syncytial, formant une <strong>syncitiotrophe</strong>.</li>
-                            <li><strong>Segmentation</strong> : Formation de segments distincts via des <strong>gènes de segmentation</strong> (gap, pair-rule, segment polarity).</li>
-                            <li><strong>Gastrulation</strong> : Ingression du mésoderme et formation de l'archentéron.</li>
-                            <li><strong>Métamorphose</strong> : Transformation radicale entre stade larvaire et adulte via la <strong>pupation</strong>.</li>
-                        </ul>
-                        
-                        <p><strong>Mécanismes fondamentaux de la segmentation :</strong></p>
-                        <ul>
-                            <li><strong>Axes corporels</strong> : Définis par des gradients de morphogènes (ex. <em>bicoid</em> et <em>nanos</em> chez <em>Drosophila</em>).</li>
-                            <li><strong>Segmentation</strong> : Chez les arthropodes, les segments sont formés par des gènes agissant en cascade (maternels → gap → pair-rule → segment polarity).</li>
-                            <li><strong>Comparaison</strong> :
-                                <ul>
-                                    <li><strong>Amphibiens/Échinodermes</strong> : Segmentation via des mouvements cellulaires (mouvements de convergence-extension).</li>
-                                    <li><strong>Arthropodes</strong> : Segmentation génétique précise avec des motifs répétitifs (ex. 14 segments chez <em>Drosophila</em>).</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+            <a href="#cours" class="cta-button">Accéder aux Ressources</a>
+        </div>
+    </section>
+
+    <!-- Features/Courses Section -->
+    <section class="features" id="cours">
+        <div class="container">
+            <h2 class="section-title">Ressources Pédagogiques</h2>
+            <p class="section-subtitle">Accédez à l'ensemble des supports de cours et exercices</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Cours Complet</h3>
+                    <p>Tous les chapitres en HTML interactif sur la génétique du développement embryonnaire</p>
+                    <ul class="feature-list">
+                        <li>Développement embryonnaire précoce de Drosophila</li>
+                        <li>Signalisation terminale et activation Torso</li>
+                        <li>Ovogenèse et mise en place des axes</li>
+                        <li>Régulation maternelle des axes embryonnaires</li>
+                        <li>Gènes de segmentation et homéotiques</li>
+                    </ul>
                 </div>
 
-                <!-- Chapter 2 -->
-                <div class="chapter">
-                    <h3 onclick="toggleChapter('chapter2')">
-                        <span>Chapitre 2: Cycle de Vie et Ovarioles</span>
-                        <span class="toggle-icon" id="toggle-icon-2">▼</span>
-                    </h3>
-                    <div class="chapter-content" id="chapter2">
-                        <p><strong>Objectifs:</strong> Maîtriser le cycle de vie de Drosophila et l'organisation des ovarioles.</p>
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/9gbv1DNnQ8Y" allowfullscreen></iframe>
-                        </div>
-                        <h4>Contenu détaillé :</h4>
-                        <p><strong>Cycle de vie de <em>Drosophila melanogaster</em> :</strong></p>
-                        <ol>
-                            <li><strong>Œuf</strong> : Développé dans les <strong>ovarioles</strong> de la femelle.</li>
-                            <li><strong>Larve</strong> : Trois stades (L1, L2, L3) marqués par des mues.</li>
-                            <li><strong>Pupa</strong> : Stade immobile où se produit la <strong>métamorphose</strong>.</li>
-                            <li><strong>Adulte</strong> : Émergence après 4–5 jours (à 25°C).</li>
-                        </ol>
-                        
-                        <p><strong>Organisation des ovarioles :</strong></p>
-                        <ul>
-                            <li><strong>Structure</strong> : Chaque ovary contient 16–20 <strong>follicules</strong>, organisés en <strong>ovarioles tubulaires</strong>.</li>
-                            <li><strong>Phases de l'ovogenèse</strong> :
-                                <ol>
-                                    <li><strong>Multiplication germinale</strong> : Cellules germinales (cystoblasts) se divisent par mitose pour former un <strong>cyste</strong> de 16 cellules (1 ovocyte + 15 cellules nourricières).</li>
-                                    <li><strong>Maturation</strong> : Dépôt de <strong>réserves nutritives</strong> (yolk) et formation de la <strong>membrane vitelline</strong>.</li>
-                                    <li><strong>Encapsulation</strong> : Cellules folliculaires forment une couche autour de l'ovocyte.</li>
-                                    <li><strong>Ovulation</strong> : Libération de l'ovocyte mature dans l'<strong>oviducte</strong>.</li>
-                                </ol>
-                            </li>
-                        </ul>
-                        
-                        <p><strong>Développement de l'ovocyte pendant l'ovogenèse :</strong></p>
-                        <p>L'ovogenèse chez <em>Drosophila</em> peut être divisée en 14 stades, chacun caractérisé par des événements spécifiques :</p>
-                        <ul>
-                            <li><strong>Stades précoces (1 à 7)</strong> :
-                                <ul>
-                                    <li>Formation du cyste de 16 cellules.</li>
-                                    <li>Détermination de l'ovocyte par accumulation de facteurs cytoplasmiques spécifiques (comme les ARNm <em>oskar</em>, <em>bicoid</em>, et <em>nanos</em>).</li>
-                                    <li>Établissement de la polarité intrinsèque de l'ovocyte.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Stades intermédiaires (8 à 10)</strong> :
-                                <ul>
-                                    <li>Migration du noyau de l'ovocyte vers la région antérieure-dorsale.</li>
-                                    <li>Activation de la transcription de gènes spécifiques.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Stades tardifs (11 à 14)</strong> :
-                                <ul>
-                                    <li>Accumulation massive de vitellus (yolk).</li>
-                                    <li>Formation de la coquille de l'œuf.</li>
-                                    <li>Maturation finale et ovulation.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✏️</div>
+                    <h3>Travaux Dirigés (TD)</h3>
+                    <p>Exercices avec corrigés détaillés sur les mécanismes embryonnaires</p>
+                    <ul class="feature-list">
+                        <li>Analyse de mutants du développement</li>
+                        <li>Étude des gradients de morphogènes</li>
+                        <li>Cascade de régulation génétique</li>
+                        <li>Cartographie des destins cellulaires</li>
+                        <li>Problèmes de génétique du développement</li>
+                    </ul>
                 </div>
 
-                <!-- Chapter 3 -->
-                <div class="chapter">
-                    <h3 onclick="toggleChapter('chapter3')">
-                        <span>Chapitre 3: Morphogènes Maternels</span>
-                        <span class="toggle-icon" id="toggle-icon-3">▼</span>
-                    </h3>
-                    <div class="chapter-content" id="chapter3">
-                        <p><strong>Objectifs:</strong> Comprendre l'établissement des axes corporels par les morphogènes maternels.</p>
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/kqNtG8vJZg4" allowfullscreen></iframe>
-                        </div>
-                        <h4>Contenu détaillé :</h4>
-                        <p><strong>Contrôle génétique par les morphogènes maternels - Établissement des axes corporels :</strong></p>
-                        
-                        <p><strong>Axe antéro-postérieur :</strong></p>
-                        <ul>
-                            <li><strong>Morphogène <em>bicoid</em></strong> :
-                                <ul>
-                                    <li>Localisé au <strong>pôle antérieur</strong> de l'œuf.</li>
-                                    <li>Active le gène <em>hunchback</em> (gap gene) pour délimiter les segments céphaliques.</li>
-                                    <li>Mécanisme: Bicoid se lie directement aux enhancers de hunchback, activant sa transcription dans la région antérieure.</li>
-                                    <li>La concentration élevée de Bicoid à l'avant entraîne une forte expression de hunchback dans cette zone.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Morphogène <em>nanos</em></strong> :
-                                <ul>
-                                    <li>Localisé au <strong>pôle postérieur</strong>.</li>
-                                    <li>Inhibe <em>hunchback</em> dans les segments abdominaux.</li>
-                                    <li>Gradient postérieur: Nanos forme un gradient croissant vers l'arrière de l'embryon.</li>
-                                    <li>Il agit en réprimant la traduction de l'ARNm hunchback dans la région postérieure, créant ainsi une expression limitée de Hunchback à la moitié antérieure.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Morphogène <em>caudal</em></strong> :
-                                <ul>
-                                    <li>Distribué de manière uniforme puis activé postérieurement.</li>
-                                    <li>Active les gènes gap postérieurs comme <em>knirps</em> et <em>giant</em>.</li>
-                                    <li>Gradient postérieur: Caudal est un facteur de transcription activé dans la moitié postérieure de l'embryon.</li>
-                                    <li>Il active les gènes gap postérieurs comme knirps et giant, tout en réprimant les gènes antérieurs comme hunchback.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        
-                        <p><strong>Axe dorso-ventral :</strong></p>
-                        <ul>
-                            <li><strong>Morphogène <em>dorsal</em></strong> :
-                                <ul>
-                                    <li>Activé par la voie <strong>Toll</strong> suite à l'interaction avec <em>Spätzle</em> (morphogène maternel).</li>
-                                    <li>Gradient nucléaire ventral → activateur de gènes mésodermiques (<em>twist</em>, <em>snail</em>).</li>
-                                    <li>Le gradient nucléaire de Dorsal contrôle l'expression de différents gènes selon sa concentration, définissant ainsi les destinées cellulaires le long de l'axe dorso-ventral.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Rôle de <em>Gurken</em></strong> :
-                                <ul>
-                                    <li>Sécrété par l'ovocyte, active la voie <strong>EGFR</strong> dans les cellules folliculaires pour orienter la polarité dorso-ventrale.</li>
-                                    <li>Pipe: Une enzyme glycosyltransférase spécifique au pôle ventral de l'ovocyte.</li>
-                                    <li>Protéines de signalisation Gd, Snake, Easter: Ces enzymes sont présentes sous forme inactive dans le périvitellin.</li>
-                                    <li>Spätzle(Spz): Une protéine sécrétée présente sous forme proligand inactive(pro-Spz).</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        
-                        <p><strong>Mécanismes de régulation des morphogènes maternels :</strong></p>
-                        <ul>
-                            <li><strong>Transcription et transport</strong> :
-                                <ul>
-                                    <li>Les ARNm des morphogènes maternels sont transcrits dans les cellules nourricières et transportés vers l'ovocyte via les anneaux fusoriaux.</li>
-                                    <li>Ce transport est médié par des complexes ribonucléoprotéiques contenant des protéines motrices (comme Kinesin et Dynein).</li>
-                                </ul>
-                            </li>
-                            <li><strong>Localisation cytoplasmique</strong> :
-                                <ul>
-                                    <li>Les ARNm sont ancrés à des sites spécifiques du cortex de l'ovocyte grâce à des séquences cis-régulatrices dans leurs UTR.</li>
-                                    <li>Par exemple, l'ARNm <em>bicoid</em> est localisé à l'extrémité antérieure, tandis que <em>nanos</em> est à l'extrémité postérieure.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        
-                        <p><strong>Rétrocontrôle entre Bicoid, Hunchback, Nanos et Caudal :</strong></p>
-                        <ul>
-                            <li><strong>Activation transcriptionnelle</strong> :
-                                <ul>
-                                    <li>Bicoid active la transcription de <em>hunchback</em> dans la région antérieure.</li>
-                                    <li>Mécanisme: Bicoid se lie directement aux enhancers de hunchback, activant sa transcription dans la région antérieure.</li>
-                                    <li>La concentration élevée de Bicoid à l'avant entraîne une forte expression de hunchback dans cette zone.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Répression translationnelle</strong> :
-                                <ul>
-                                    <li>Nanos réprime la traduction de <em>hunchback</em> dans la région postérieure.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Interactions antagonistes</strong> :
-                                <ul>
-                                    <li>Bicoid et Nanos ont des effets opposés sur <em>hunchback</em>.</li>
-                                    <li>Caudal active les gènes gap postérieurs comme <em>knirps</em> et <em>giant</em>.</li>
-                                    <li>Hunchback réprime directement l'expression de caudal dans la région antérieure.</li>
-                                    <li>À l'inverse, Caudal active des gènes postérieurs qui répriment indirectement hunchback dans la région postérieure.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Boucle de rétroaction</strong> :
-                                <ul>
-                                    <li>Bicoid active hunchback, qui à son tour peut moduler l'activité de Bicoid en influençant l'expression d'autres gènes.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Contrôle Continu (CC)</h3>
+                    <p>Sujets et barèmes - Consultable après l'épreuve écrite</p>
+                    <ul class="feature-list">
+                        <li>Sujets d'examens des années précédentes</li>
+                        <li>Corrigés types détaillés</li>
+                        <li>Barèmes de notation</li>
+                        <li>Publication des notes sur Progres</li>
+                        <li>Analyse des erreurs fréquentes</li>
+                    </ul>
                 </div>
 
-                <!-- Chapter 4 -->
-                <div class="chapter">
-                    <h3 onclick="toggleChapter('chapter4')">
-                        <span>Chapitre 4: Gènes de Segmentation</span>
-                        <span class="toggle-icon" id="toggle-icon-4">▼</span>
-                    </h3>
-                    <div class="chapter-content" id="chapter4">
-                        <p><strong>Objectifs:</strong> Maîtriser la cascade de régulation génétique des gènes de segmentation.</p>
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/5bZuGz9b8dE" allowfullscreen></iframe>
-                        </div>
-                        <h4>Contenu détaillé :</h4>
-                        <p><strong>Gènes de segmentation zygotiques - Cascade de régulation génétique :</strong></p>
-                        
-                        <p><strong>Gènes GAP :</strong></p>
-                        <ul>
-                            <li><strong>Fonction</strong> : Définissent des <strong>zones larges</strong> (gap) le long de l'axe antéro-postérieur.</li>
-                            <li><strong>Exemples</strong> :
-                                <ul>
-                                    <li><em>hunchback</em> : Activé par <em>bicoid</em>, exprimé en zone antérieure.</li>
-                                    <li><em>krüppel</em> : Contrôlé par <em>bicoid</em> et <em>nanos</em>, exprimé en zone centrale.</li>
-                                    <li><em>giant</em> : Réprimé par <em>bicoid</em> et activé par <em>nanos</em>.</li>
-                                    <li><em>knirps</em> : Activé par <em>caudal</em> et réprimé par <em>bicoid</em>.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Mécanismes moléculaires</strong> :
-                                <ul>
-                                    <li>Les gènes gap divisent l'embryon en grandes régions correspondant à des segments futurs.</li>
-                                    <li>Leur expression se chevauche partiellement, mais des mécanismes de répression mutuelle créent des frontières nettes entre les domaines d'expression.</li>
-                                    <li>Les produits des gènes gap se lient directement aux enhancers des gènes pair-rule pour moduler leur expression.</li>
-                                    <li>Ces enhancers contiennent des sites de liaison spécifiques pour chaque gène gap, permettant une régulation fine et positionnelle.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        
-                        <p><strong>Gènes Pair-Rule :</strong></p>
-                        <ul>
-                            <li><strong>Fonction</strong> : Génèrent des <strong>bandes alternées</strong> (every 7th segment) via des motifs répétitifs.</li>
-                            <li><strong>Exemples</strong> :
-                                <ul>
-                                    <li><em>even-skipped</em> (<em>eve</em>) :
-                                        <ul>
-                                            <li>Exprimé en 7 bandes précises le long de l'axe A-P.</li>
-                                            <li>Chaque bande est définie par une combinaison unique de gènes gap :
-                                                <ul>
-                                                    <li>Bande 2 : Activée par Bicoid et Hunchback, réprimée par Giant.</li>
-                                                    <li>Bande 3 : Activée par Hunchback, réprimée par Krüppel.</li>
-                                                    <li>Bandes postérieures : Activées par Caudal, réprimées par Knirps.</li>
-                                                </ul>
-                                            </li>
-                                            <li>Eve agit comme un répresseur transcriptionnel puissant.</li>
-                                            <li>Il inhibe l'expression de gènes cibles dans ses bandes.</li>
-                                        </ul>
-                                    </li>
-                                    <li><em>fushi tarazu</em> (<em>ftz</em>) :
-                                        <ul>
-                                            <li>Exprimé en bandes alternées par rapport à Eve.</li>
-                                            <li>Activation : Ftz est activé dans des bandes alternées par rapport à eve, formant un motif complémentaire.</li>
-                                            <li>Son activation est contrôlée par des combinaisons similaires de gènes gap :
-                                                <ul>
-                                                    <li>Bande 1 : Activée par Bicoid, réprimée par Hunchback.</li>
-                                                    <li>Bandes postérieures : Activées par Caudal, réprimées par Knirps.</li>
-                                                </ul>
-                                            </li>
-                                            <li>Répression: Giant et Knirps répriment ftz dans des régions spécifiques, assurant un chevauchement minimal avec eve.</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Gènes pair-rule secondaires</strong> :
-                                <ul>
-                                    <li><em>runt</em>, <em>hairy</em>, <em>odd-skipped</em> affinent les motifs des gènes primaires.</li>
-                                    <li>Par exemple, Runt peut réprimer <em>even-skipped</em> dans ses propres bandes.</li>
-                                    <li>Hairy est un autre gène pair-rule secondaire exprimé en quatorze bandes, agissant comme un répresseur transcriptionnel.</li>
-                                    <li>Odd-skipped (Odd) est exprimé en quatorze bandes, souvent en opposition avec Runt et Hairy.</li>
-                                    <li>Les gènes pair-rule primaires et secondaires interagissent de manière antagoniste pour affiner les frontières entre les segments.</li>
-                                    <li>Par exemple, Hairy et Odd-skipped agissent comme des répresseurs mutuels, créant des frontières nettes entre leurs bandes respectives.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        
-                        <p><strong>Gènes de Polarité Segmentaire :</strong></p>
-                        <ul>
-                            <li><strong>Fonction</strong> : Définissent les <strong>frontières internes</strong> des segments.</li>
-                            <li><strong>Exemples</strong> :
-                                <ul>
-                                    <li><em>engrailed</em> (<em>en</em>) :
-                                        <ul>
-                                            <li>Exprimé dans la partie postérieure de chaque segment (parasegment).</li>
-                                            <li>Engrailed définit la limite postérieure de chaque parasegment en activant des gènes cibles spécifiques.</li>
-                                            <li>Définis par Engrailed, qui active des gènes spécifiques dans ces cellules.</li>
-                                            <li>Even-skipped active engrailed dans les cellules postérieures.</li>
-                                        </ul>
-                                    </li>
-                                    <li><em>wingless</em> (<em>wg</em>) :
-                                        <ul>
-                                            <li>Activé par certains gènes pair-rule, notamment <em>Odd-skipped</em> et <em>Hairy</em>, dans des régions spécifiques.</li>
-                                            <li>Wingless agit comme un signal paracrine qui maintient la polarité des segments.</li>
-                                            <li>Odd-skipped active wingless dans les cellules antérieures.</li>
-                                        </ul>
-                                    </li>
-                                    <li><em>hedgehog</em> (<em>hh</em>) :
-                                        <ul>
-                                            <li>Exprimé dans les cellules postérieures de chaque segment sous le contrôle d'<em>engrailed</em>.</li>
-                                            <li>Hedgehog diffuse vers les cellules antérieures et active <em>ci</em> (Cubitus interruptus).</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        
-                        <p><strong>Interaction et rétrocontrôle entre Engrailed, Wingless et Hedgehog :</strong></p>
-                        <ul>
-                            <li><strong>Mécanisme</strong> :
-                                <ul>
-                                    <li>Engrailed active <em>hedgehog</em> dans les cellules postérieures.</li>
-                                    <li>Hedgehog diffuse vers les cellules antérieures et active <em>wingless</em>.</li>
-                                    <li>Wingless diffuse vers les cellules postérieures et maintient l'expression d'<em>engrailed</em>.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Boucles de rétroaction</strong> :
-                                <ul>
-                                    <li><strong>Boucle de rétroaction positive</strong> :
-                                        <ul>
-                                            <li>Hedgehog → Wingless → Engrailed → Hedgehog</li>
-                                            <li>Hedgehog produit dans les cellules postérieures induit l'expression de wingless dans les cellules antérieures.</li>
-                                            <li>Wingless, une fois produit, active l'expression de engrailed dans les cellules postérieures.</li>
-                                            <li>Engrailed, à son tour, active la production de Hedgehog, créant ainsi une boucle de rétroaction positive.</li>
-                                        </ul>
-                                    </li>
-                                    <li>Les boucles de rétroaction positive et les mécanismes antagonistes maintiennent des frontières nettes entre les compartiments.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Stabilisation des frontières</strong> :
-                                <ul>
-                                    <li>Les signaux paracrines (Hedgehog et Wingless) créent des interactions cellulaires qui renforcent les frontières entre les compartiments.</li>
-                                    <li>Hedgehog provenant des cellules postérieures induit Wingless dans les cellules antérieures.</li>
-                                    <li>Wingless provenant des cellules antérieures stabilise Engrailed dans les cellules postérieures.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Examen Final (EF)</h3>
+                    <p>Sujets et corrigés types - Consultable après l'épreuve</p>
+                    <ul class="feature-list">
+                        <li>Sujets complets d'examens finaux</li>
+                        <li>Corrigés détaillés et commentés</li>
+                        <li>Conseils méthodologiques</li>
+                        <li>Publication des notes sur Progres</li>
+                        <li>Statistiques de réussite</li>
+                    </ul>
                 </div>
 
-                <!-- Chapter 5 -->
-                <div class="chapter">
-                    <h3 onclick="toggleChapter('chapter5')">
-                        <span>Chapitre 5: Gènes Homeotiques</span>
-                        <span class="toggle-icon" id="toggle-icon-5">▼</span>
-                    </h3>
-                    <div class="chapter-content" id="chapter5">
-                        <p><strong>Objectifs:</strong> Comprendre le rôle des gènes Hox dans la spécification segmentaire.</p>
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/aBcDeFgHiJk" allowfullscreen></iframe>
-                        </div>
-                        <h4>Contenu détaillé :</h4>
-                        <p><strong>Gènes Homeotiques :</strong></p>
-                        
-                        <p><strong>Rôle des Hox genes :</strong></p>
-                        <ul>
-                            <li><strong>Définition</strong> : Gènes codant pour des <strong>facteurs de transcription</strong> qui déterminent l'<strong>identité des segments</strong>.</li>
-                            <li><strong>Exemples chez <em>Drosophila</em></strong> :
-                                <ul>
-                                    <li><strong>Complexe Antennapedia (ANT-C)</strong> :
-                                        <ul>
-                                            <li><em>Labial</em> (<em>lab</em>) : Contrôle les structures céphaliques antérieures.</li>
-                                            <li><em>Proboscipedia</em> (<em>pb</em>) : Détermine l'identité des appendices buccaux.</li>
-                                            <li><em>Deformed</em> (<em>Dfd</em>) : Spécifie les segments céphaliques médians (ex. mandibules).</li>
-                                            <li><em>Sex combs reduced</em> (<em>Scr</em>) : Contrôle l'identité du premier segment thoracique (T1).</li>
-                                            <li><em>Antennapedia</em> (<em>Antp</em>) : Confère l'identité thoracique (ex. pattes).</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Bithorax complex (BX-C)</strong> :
-                                        <ul>
-                                            <li><em>Ultrabithorax</em> (<em>Ubx</em>) : Confère l'identité du segment T3 et des segments abdominaux.</li>
-                                            <li><em>Abdominal-A</em> (<em>Abd-A</em>) : Contrôle les segments abdominaux médians.</li>
-                                            <li><em>Abdominal-B</em> (<em>Abd-B</em>) : Contrôle les segments abdominaux postérieurs.</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        
-                        <p><strong>Mécanismes de régulation :</strong></p>
-                        <ul>
-                            <li><strong>Colinéarité</strong> :
-                                <ul>
-                                    <li>Ordre linéaire des gènes dans le génome correspond à leur ordre d'expression le long de l'axe antéro-postérieur.</li>
-                                    <li>Les gènes situés à l'extrémité 3' du complexe (par exemple, lab, pb) sont exprimés dans les segments antérieurs.</li>
-                                    <li>Les gènes situés à l'extrémité 5' (par exemple, Abd-B) sont exprimés dans les segments postérieurs.</li>
-                                    <li>Cette organisation reflète une colinéarité spatiale et temporelle: les gènes situés en amont sont activés plus tôt pendant le développement.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Répression</strong> :
-                                <ul>
-                                    <li>Les gènes Hox sont réprimés dans les segments non ciblés par des protéines comme <strong>PcG</strong> (Polycomb group).</li>
-                                    <li>Les gènes Hox s'excluent mutuellement dans leurs domaines d'expression grâce à des mécanismes de répression transcriptionnelle.</li>
-                                    <li>Par exemple, Ultrabithorax réprime Antennapedia dans les segments abdominaux.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Activation</strong> :
-                                <ul>
-                                    <li>Mécanismes épigénétiques : Les complexes Trithorax (TrxG) maintiennent l'expression active des gènes Hox dans les segments appropriés.</li>
-                                    <li>Une fois activés, les gènes Hox maintiennent leur expression via des modifications épigénétiques, telles que la méthylation de l'ADN et les modifications des histones.</li>
-                                    <li>Polycomb: Réprime les gènes Hox dans les régions où ils ne doivent pas être exprimés.</li>
-                                    <li>Trithorax: Maintient l'activation des gènes Hox dans leurs domaines spécifiques.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        
-                        <p><strong>Phénotypes de mutation :</strong></p>
-                        <ul>
-                            <li><em>Ubx</em> muté → duplication de pattes thoraciques (effet bithorax).</li>
-                            <li><em>Antp</em> muté → transformation de l'antenne en pattes.</li>
-                            <li>Mutations des gènes Hox spécifient l'identité des segments en activant ou réprimant des batteries de gènes cibles.</li>
-                            <li>Par exemple, Ultrabithorax réprime la formation des pattes dans le segment T3, ce qui explique pourquoi les mouches n'ont que trois paires de pattes.</li>
-                        </ul>
-                        
-                        <p><strong>Importance évolutionnaire :</strong></p>
-                        <ul>
-                            <li>Les Hox genes sont conservés chez tous les eumétazoaires.</li>
-                            <li>Variations dans leurs régions régulatrices expliquent les différences morphologiques entre espèces (ex. nombre de segments).</li>
-                        </ul>
-                        
-                        <p><strong>Régulation du développement par les gènes Hox et rétrocontrôle :</strong></p>
-                        <ul>
-                            <li><strong>Activation séquentielle</strong> :
-                                <ul>
-                                    <li>Les gènes situés en amont sont activés plus tôt pendant le développement.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Régulation par les éléments cis-régulateurs</strong> :
-                                <ul>
-                                    <li>Chaque gène du complexe est contrôlé par des éléments cis-régulateurs spécifiques (enhancers).</li>
-                                    <li>Ces enhancers répondent à des signaux provenant des gradients de morphogènes comme Bicoid, Hunchback, Krüppel, et Caudal.</li>
-                                    <li>Ces enhancers garantissent une expression précise et restreinte des gènes homéotiques dans les segments appropriés.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Amplification par boucles de rétroaction positive</strong> :
-                                <ul>
-                                    <li>Certains gènes Hox amplifient leur propre expression via des boucles de rétroaction positive.</li>
-                                    <li>Par exemple, Bicoid active labial dans la région antérieure, tandis que Caudal active Abdominal-B dans la région postérieure.</li>
-                                    <li>Par exemple, Ultrabithorax active ses propres enhancers pour stabiliser son domaine d'expression.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Thèmes Abordés</h3>
+                    <p>Contenu complet du module de développement</p>
+                    <ul class="feature-list">
+                        <li>Gènes du développement embryonnaire</li>
+                        <li>Modèle Drosophila melanogaster</li>
+                        <li>Gènes homéotiques et complexe Hox</li>
+                        <li>Gènes de segmentation</li>
+                        <li>Signalisation cellulaire et morphogènes</li>
+                    </ul>
                 </div>
-            </div>
 
-            <!-- QCM Tab -->
-            <div class="tab-content" id="qcmTab" style="display: none;">
-                <h2>📝 Questionnaire de Compréhension</h2>
-                
-                <div class="qcm-section">
-                    <div class="question">
-                        <h4>1. Quel morphogène contrôle la polarité antéro-postérieure ?</h4>
-                        <div class="options">
-                            <div class="option" onclick="selectOption(this, 'A')">A) Dorsal</div>
-                            <div class="option" onclick="selectOption(this, 'B')">B) Bicoid</div>
-                            <div class="option" onclick="selectOption(this, 'C')">C) Nanos</div>
-                            <div class="option" onclick="selectOption(this, 'D')">D) Gurken</div>
-                            <div class="option" onclick="selectOption(this, 'E')">E) Spätzle</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <h4>2. Quel gène est un exemple de pair-rule gene ?</h4>
-                        <div class="options">
-                            <div class="option" onclick="selectOption(this, 'A')">A) hunchback</div>
-                            <div class="option" onclick="selectOption(this, 'B')">B) even-skipped</div>
-                            <div class="option" onclick="selectOption(this, 'C')">C) engrailed</div>
-                            <div class="option" onclick="selectOption(this, 'D')">D) Ultrabithorax</div>
-                            <div class="option" onclick="selectOption(this, 'E')">E) caudal</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <h4>3. Où se déroule le développement de l'ovocyte ?</h4>
-                        <div class="options">
-                            <div class="option" onclick="selectOption(this, 'A')">A) Dans les testicules</div>
-                            <div class="option" onclick="selectOption(this, 'B')">B) Dans les ovarioles</div>
-                            <div class="option" onclick="selectOption(this, 'C')">C) Dans le corps gras</div>
-                            <div class="option" onclick="selectOption(this, 'D')">D) Dans l'oviducte</div>
-                            <div class="option" onclick="selectOption(this, 'E')">E) Dans la chambre ovarienne</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <h4>4. Quel est le rôle des gènes Hox ?</h4>
-                        <div class="options">
-                            <div class="option" onclick="selectOption(this, 'A')">A) Définir l'identité des segments</div>
-                            <div class="option" onclick="selectOption(this, 'B')">B) Contrôler la segmentation primaire</div>
-                            <div class="option" onclick="selectOption(this, 'C')">C) Réguler la fécondation</div>
-                            <div class="option" onclick="selectOption(this, 'D')">D) Activer la synthèse de vitellus</div>
-                            <div class="option" onclick="selectOption(this, 'E')">E) Inhiber l'apoptose</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <h4>5. Quel processus est régulé par la voie Hedgehog ?</h4>
-                        <div class="options">
-                            <div class="option" onclick="selectOption(this, 'A')">A) Communication entre cellules segmentaires</div>
-                            <div class="option" onclick="selectOption(this, 'B')">B) Formation des axes corporels</div>
-                            <div class="option" onclick="selectOption(this, 'C')">C) Dépôt de réserves nutritives</div>
-                            <div class="option" onclick="selectOption(this, 'D')">D) Activation des gènes maternels</div>
-                            <div class="option" onclick="selectOption(this, 'E')">E) Synthèse de la membrane vitelline</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <h4>6. Quelle est la fonction du gène <em>nanos</em> ?</h4>
-                        <div class="options">
-                            <div class="option" onclick="selectOption(this, 'A')">A) Activer hunchback dans la région antérieure</div>
-                            <div class="option" onclick="selectOption(this, 'B')">B) Réprimer hunchback dans la région postérieure</div>
-                            <div class="option" onclick="selectOption(this, 'C')">C) Activer caudal dans la région postérieure</div>
-                            <div class="option" onclick="selectOption(this, 'D')">D) Réprimer bicoid dans la région antérieure</div>
-                            <div class="option" onclick="selectOption(this, 'E')">E) Activer giant dans la région centrale</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <h4>7. Quel gène active l'expression de <em>engrailed</em> dans les cellules postérieures ?</h4>
-                        <div class="options">
-                            <div class="option" onclick="selectOption(this, 'A')">A) fushi tarazu</div>
-                            <div class="option" onclick="selectOption(this, 'B')">B) even-skipped</div>
-                            <div class="option" onclick="selectOption(this, 'C')">C) wingless</div>
-                            <div class="option" onclick="selectOption(this, 'D')">D) hedgehog</div>
-                            <div class="option" onclick="selectOption(this, 'E')">E) krüppel</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <h4>8. Quelle est la fonction des gènes gap ?</h4>
-                        <div class="options">
-                            <div class="option" onclick="selectOption(this, 'A')">A) Définir des bandes alternées</div>
-                            <div class="option" onclick="selectOption(this, 'B')">B) Définir des zones larges le long de l'axe A-P</div>
-                            <div class="option" onclick="selectOption(this, 'C')">C) Définir les frontières internes des segments</div>
-                            <div class="option" onclick="selectOption(this, 'D')">D) Définir l'identité des segments</div>
-                            <div class="option" onclick="selectOption(this, 'E')">E) Activer la gastrulation</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <h4>9. Quel complexe contient le gène <em>Ultrabithorax</em> ?</h4>
-                        <div class="options">
-                            <div class="option" onclick="selectOption(this, 'A')">A) ANT-C</div>
-                            <div class="option" onclick="selectOption(this, 'B')">B) BX-C</div>
-                            <div class="option" onclick="selectOption(this, 'C')">C) Hox-A</div>
-                            <div class="option" onclick="selectOption(this, 'D')">D) Hox-D</div>
-                            <div class="option" onclick="selectOption(this, 'E')">E) ParaHox</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <h4>10. Quel est le rôle de la voie Toll dans le développement de Drosophila ?</h4>
-                        <div class="options">
-                            <div class="option" onclick="selectOption(this, 'A')">A) Établir l'axe antéro-postérieur</div>
-                            <div class="option" onclick="selectOption(this, 'B')">B) Établir l'axe dorso-ventral</div>
-                            <div class="option" onclick="selectOption(this, 'C')">C) Activer la segmentation</div>
-                            <div class="option" onclick="selectOption(this, 'D')">D) Contrôler l'ovogenèse</div>
-                            <div class="option" onclick="selectOption(this, 'E')">E) Activer la métamorphose</div>
-                        </div>
-                    </div>
-
-                    <button class="btn" onclick="submitQCM()" style="margin-top: 20px;">Soumettre les réponses</button>
-                    <div id="qcmResult" style="margin-top: 20px; text-align: center;"></div>
-                </div>
-            </div>
-
-            <!-- Étudiants Tab -->
-            <div class="tab-content" id="etudiantsTab" style="display: none;">
-                <h2>👥 Liste des Étudiants - Année Universitaire 2024-2025</h2>
-                <div id="studentsContent">
-                    <div class="loading">
-                        <div class="loading-spinner"></div>
-                        <p>Chargement des données étudiants...</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Admin Tab -->
-            <div class="tab-content" id="adminTabContent" style="display: none;">
-                <h2>⚙️ Panneau Administratif</h2>
-                <div class="admin-panel">
-                    <h3>Modifier les fichiers de cours</h3>
-                    <p>Accès réservé aux enseignants pour la mise à jour des documents.</p>
-                    <button class="btn" style="background: #28a745;">Uploader des fichiers</button>
-                </div>
-                <div class="admin-panel">
-                    <h3>Gérer les évaluations</h3>
-                    <p>Création et modification des TD et examens.</p>
-                    <button class="btn" style="background: #ffc107; color: #333;">Créer un nouveau TD</button>
-                    <button class="btn" style="background: #dc3545; margin-top: 10px;">Créer un examen</button>
-                </div>
-                <div class="admin-panel">
-                    <h3>Gérer les étudiants</h3>
-                    <p>Ajout, modification ou suppression d'étudiants.</p>
-                    <button class="btn" style="background: #17a2b8;">Ajouter un étudiant</button>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Caractéristiques</h3>
+                    <p>Des ressources modernes et accessibles</p>
+                    <ul class="feature-list">
+                        <li>Chapitres en HTML interactif</li>
+                        <li>Schémas et illustrations détaillés</li>
+                        <li>Accessible sur tous appareils</li>
+                        <li>Téléchargement hors-ligne possible</li>
+                        <li>Mises à jour régulières</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section" id="video">
+        <div class="container">
+            <h2 class="section-title">Vidéo d'Annonce</h2>
+            <p class="section-subtitle">Présentation du module et des ressources disponibles</p>
+
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <div class="play-button"></div>
+                </div>
+                <div class="video-info">
+                    <h3>Bienvenue dans le module Aspect Génétique du Développement Embryonnaire</h3>
+                    <p>Découvrez dans cette vidéo :</p>
+                    <ul style="margin-left: 1.5rem; color: var(--text-light); line-height: 2;">
+                        <li>Les objectifs pédagogiques du cours</li>
+                        <li>L'organisation des ressources en ligne</li>
+                        <li>Les modalités d'accès à la plateforme e-learning</li>
+                        <li>Les recommandations pour réussir ce module</li>
+                        <li>Les contacts et modalités d'évaluation</li>
+                    </ul>
+                    <p style="margin-top: 1rem; color: var(--text-light);"><em>Durée estimée: 10-15 minutes</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slides Section -->
+    <section class="slides" id="slides">
+        <div class="container">
+            <h2 class="section-title">Supports de Cours</h2>
+            <p class="section-subtitle">Téléchargez ou consultez les présentations en ligne</p>
+
+            <div class="slides-grid">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-number">01</div>
+                    </div>
+                    <div class="slide-content">
+                        <h4>Annonce Importante</h4>
+                        <ul>
+                            <li>Mise en ligne des ressources</li>
+                            <li>Présentation du module</li>
+                            <li>Informations pratiques</li>
+                            <li>Modalités d'accès</li>
+                        </ul>
+                        <a href="#" class="download-btn">Consulter</a>
+                    </div>
+                </div>
+
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-number">02</div>
+                    </div>
+                    <div class="slide-content">
+                        <h4>Développement Embryonnaire</h4>
+                        <ul>
+                            <li>Signalisation terminale (Torso)</li>
+                            <li>Activation du récepteur</li>
+                            <li>Cascade Ras/MAPK</li>
+                            <li>Gènes cibles zygotiques</li>
+                        </ul>
+                        <a href="#" class="download-btn">Télécharger PDF</a>
+                    </div>
+                </div>
+
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-number">03</div>
+                    </div>
+                    <div class="slide-content">
+                        <h4>Ovogenèse et Axes</h4>
+                        <ul>
+                            <li>Architecture de l'ovaire</li>
+                            <li>Germarium et GSC</li>
+                            <li>Stades de développement</li>
+                            <li>Signaux Gurken</li>
+                        </ul>
+                        <a href="#" class="download-btn">Télécharger PDF</a>
+                    </div>
+                </div>
+
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-number">04</div>
+                    </div>
+                    <div class="slide-content">
+                        <h4>Régulation Maternelle</h4>
+                        <ul>
+                            <li>Gradient Bicoid (antérieur)</li>
+                            <li>Système Nanos/Oskar (postérieur)</li>
+                            <li>Cascade Dorsal-Ventral</li>
+                            <li>Intégration des systèmes</li>
+                        </ul>
+                        <a href="#" class="download-btn">Télécharger PDF</a>
+                    </div>
+                </div>
+
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-number">05</div>
+                    </div>
+                    <div class="slide-content">
+                        <h4>Cycle de Vie Drosophila</h4>
+                        <ul>
+                            <li>Ovogenèse et structure de l'œuf</li>
+                            <li>Fécondation et segmentation</li>
+                            <li>Gastrulation</li>
+                            <li>Cascade de segmentation</li>
+                        </ul>
+                        <a href="#" class="download-btn">Télécharger DOCX</a>
+                    </div>
+                </div>
+
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-number">06</div>
+                    </div>
+                    <div class="slide-content">
+                        <h4>Gènes de Segmentation</h4>
+                        <ul>
+                            <li>Gènes gap</li>
+                            <li>Gènes pair-rule</li>
+                            <li>Polarité segmentaire</li>
+                            <li>Gènes homéotiques Hox</li>
+                        </ul>
+                        <a href="#" class="download-btn">Bientôt disponible</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact & Informations</h2>
+            <p class="section-subtitle">Besoin d'aide ou d'informations complémentaires ?</p>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Informations de Contact</h3>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">👨‍🏫</div>
+                            <div>
+                                <strong>Enseignant Responsable</strong>
+                                <p>Dr Abdelkader ALLOUCHE<br>Maître de Conférences en Biologie</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🏛️</div>
+                            <div>
+                                <strong>Université</strong>
+                                <p>Université d'Oran 1 - Ahmed Ben Bella<br>Faculté des Sciences de la Nature et de la Vie</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🔬</div>
+                            <div>
+                                <strong>Département</strong>
+                                <p>Département de Biotechnologie<br>Laboratoire de Génétique du Développement</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">💻</div>
+                            <div>
+                                <strong>Plateforme E-Learning</strong>
+                                <p><a href="https://elearning.univ-oran1.dz" style="color: var(--primary-color);">https://elearning.univ-oran1.dz</a><br>Accès avec identifiants universitaires</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <strong>Contact</strong>
+                                <p>Via la messagerie de la plateforme e-learning<br>ou lors des séances de cours/TD</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">⚠️ Important</h4>
+                        <p style="color: var(--text-light);">Les sujets de Contrôle Continu et d'Examen Final seront mis à disposition pour consultation uniquement après :</p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-light);">
+                            <li>Le déroulement de l'épreuve écrite en salle d'examen</li>
+                            <li>Le rendu des notes sur la plateforme Progres</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.5rem;">Envoyer un Message</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="nom">Nom Complet *</label>
+                            <input type="text" id="nom" name="nom" required placeholder="Votre nom et prénom">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Universitaire *</label>
+                            <input type="email" id="email" name="email" required placeholder="votre.nom@univ-oran1.dz">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="matricule">Numéro de Matricule *</label>
+                            <input type="text" id="matricule" name="matricule" required placeholder="Votre numéro d'étudiant">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sujet">Sujet *</label>
+                            <input type="text" id="sujet" name="sujet" required placeholder="Objet de votre message">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Votre message..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Envoyer le Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024-2025 Université d'Oran 1 - Ahmed Ben Bella | Tous droits réservés</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://github.com/kader68Biology" target="_blank">GitHub</a> | 
+            <a href="https://kader68biology.github.io/Drosophila-Dev-Control/" target="_blank">GitHub Pages</a> | 
+            <a href="https://elearning.univ-oran1.dz" target="_blank">E-Learning</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            Dr Abdelkader ALLOUCHE - Maître de Conférences en Biologie<br>
+            Département de Biotechnologie - Faculté des Sciences de la Nature et de la Vie
+        </p>
+    </footer>
 
     <script>
-        // Variables globales
-        let currentUser = null;
-        let isAdmin = false;
-        let authToken = null;
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
 
-        // Données des étudiants (pour simulation sans backend)
-        const studentsData = [
-            { name: "Ali Benali", presence: "Présent", cc: 16, ef: 14, moyenne: 15 },
-            { name: "Camille Dubois", presence: "Présent", cc: 18, ef: 17, moyenne: 17.5 },
-            { name: "David Moreau", presence: "Absent", cc: null, ef: null, moyenne: null },
-            { name: "Emma Laurent", presence: "Présent", cc: 15, ef: 16, moyenne: 15.5 },
-            { name: "François Martin", presence: "Présent", cc: 14, ef: 13, moyenne: 13.5 },
-            { name: "Isabelle Rousseau", presence: "Présent", cc: 17, ef: 18, moyenne: 17.5 },
-            { name: "Julien Petit", presence: "Absent", cc: null, ef: null, moyenne: null },
-            { name: "Laura Bernard", presence: "Présent", cc: 19, ef: 18, moyenne: 18.5 },
-            { name: "Marc Dubois", presence: "Présent", cc: 13, ef: 14, moyenne: 13.5 },
-            { name: "Nathalie Simon", presence: "Présent", cc: 16, ef: 15, moyenne: 15.5 }
-        ];
-
-        // Données de connexion
-        const validUsers = {
-            "Ali Benali": { password: "L3droso2025", role: "student" },
-            "Camille Dubois": { password: "L3droso2025", role: "student" },
-            "David Moreau": { password: "L3droso2025", role: "student" },
-            "Emma Laurent": { password: "L3droso2025", role: "student" },
-            "François Martin": { password: "L3droso2025", role: "student" },
-            "Isabelle Rousseau": { password: "L3droso2025", role: "student" },
-            "Julien Petit": { password: "L3droso2025", role: "student" },
-            "Laura Bernard": { password: "L3droso2025", role: "student" },
-            "Marc Dubois": { password: "L3droso2025", role: "student" },
-            "Nathalie Simon": { password: "L3droso2025", role: "student" },
-            "Administrateur": { password: "DrososegCTRLL3", role: "admin" }
-        };
-
-        // Fonction de login
-        function login() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const messageDiv = document.getElementById('loginMessage');
-            const loginBtn = document.getElementById('loginBtn');
-
-            // Validation des champs
-            if (!username || !password) {
-                messageDiv.innerHTML = '<span class="error">Veuillez remplir tous les champs</span>';
-                return;
-            }
-
-            // Désactiver le bouton pendant le chargement
-            loginBtn.disabled = true;
-            loginBtn.innerHTML = 'Connexion...';
-
-            // Vérifier les identifiants
-            setTimeout(() => {
-                const user = validUsers[username];
-                
-                if (user && user.password === password) {
-                    // Stocker les informations de l'utilisateur
-                    currentUser = {
-                        username: username,
-                        role: user.role
-                    };
-                    isAdmin = user.role === 'admin';
-                    
-                    // Stocker dans localStorage pour persistance
-                    localStorage.setItem('currentUser', JSON.stringify(currentUser));
-                    
-                    // Afficher le contenu principal
-                    showContent();
-                    
-                    // Afficher l'onglet admin si l'utilisateur est administrateur
-                    if (isAdmin) {
-                        document.getElementById('adminTab').style.display = 'block';
-                    }
-                    
-                    messageDiv.innerHTML = '<span class="success">Connexion réussie! Bienvenue ' + username + '</span>';
-                } else {
-                    messageDiv.innerHTML = '<span class="error">Nom d\'utilisateur ou mot de passe incorrect</span>';
-                }
-                
-                // Réactiver le bouton
-                loginBtn.disabled = false;
-                loginBtn.innerHTML = 'Se connecter';
-            }, 500);
-        }
-
-        // Fonction de déconnexion
-        function logout() {
-            // Effacer les données de session
-            currentUser = null;
-            isAdmin = false;
-            
-            // Effacer le localStorage
-            localStorage.removeItem('currentUser');
-            
-            // Afficher l'écran de connexion
-            document.getElementById('loginSection').style.display = 'block';
-            document.getElementById('contentSection').style.display = 'none';
-            
-            // Réinitialiser les champs
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
-            document.getElementById('loginMessage').innerHTML = '';
-            
-            // Cacher l'onglet admin
-            document.getElementById('adminTab').style.display = 'none';
-        }
-
-        // Afficher le contenu principal
-        function showContent() {
-            document.getElementById('loginSection').style.display = 'none';
-            document.getElementById('contentSection').style.display = 'block';
-        }
-
-        // Navigation par onglets
-        function showTab(tabName) {
-            // Cacher tous les onglets
-            const coursTab = document.getElementById('coursTab');
-            const qcmTab = document.getElementById('qcmTab');
-            const etudiantsTab = document.getElementById('etudiantsTab');
-            const adminTabContent = document.getElementById('adminTabContent');
-            
-            if (coursTab) coursTab.style.display = 'none';
-            if (qcmTab) qcmTab.style.display = 'none';
-            if (etudiantsTab) etudiantsTab.style.display = 'none';
-            if (adminTabContent) adminTabContent.style.display = 'none';
-            
-            // Désactiver tous les boutons
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Afficher l'onglet sélectionné
-            switch(tabName) {
-                case 'cours':
-                    if (coursTab) {
-                        coursTab.style.display = 'block';
-                        event.target.classList.add('active');
-                    }
-                    break;
-                case 'qcm':
-                    if (qcmTab) {
-                        qcmTab.style.display = 'block';
-                        event.target.classList.add('active');
-                    }
-                    break;
-                case 'etudiants':
-                    if (etudiantsTab) {
-                        etudiantsTab.style.display = 'block';
-                        event.target.classList.add('active');
-                        // Charger les données des étudiants
-                        loadStudents();
-                    }
-                    break;
-                case 'admin':
-                    if (isAdmin && adminTabContent) {
-                        adminTabContent.style.display = 'block';
-                        event.target.classList.add('active');
-                    }
-                    break;
-            }
-        }
-
-        // Toggle chapters
-        function toggleChapter(chapterId) {
-            const chapter = document.getElementById(chapterId);
-            const icon = document.getElementById('toggle-icon-' + chapterId.replace('chapter', ''));
-            
-            if (chapter && icon) {
-                chapter.classList.toggle('active');
-                icon.classList.toggle('rotated');
-            }
-        }
-
-        // Gestion des QCM
-        function selectOption(element, value) {
-            // Désélectionner toutes les options de cette question
-            const options = element.parentElement.querySelectorAll('.option');
-            options.forEach(opt => opt.classList.remove('selected'));
-            
-            // Sélectionner l'option cliquée
-            element.classList.add('selected');
-            
-            // Stocker la réponse
-            const question = element.parentElement.parentElement;
-            if (question) {
-                question.dataset.selected = value;
-            }
-        }
-
-        // Soumission du QCM
-        function submitQCM() {
-            const questions = document.querySelectorAll('.question');
-            let score = 0;
-            const total = questions.length;
-            
-            // Réponses correctes
-            const correctAnswers = ['B', 'B', 'B', 'A', 'A', 'B', 'B', 'B', 'B', 'B'];
-            
-            questions.forEach((question, index) => {
-                const selected = question.dataset.selected;
-                if (selected === correctAnswers[index]) {
-                    score++;
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
-            
-            const percentage = Math.round((score / total) * 100);
-            const resultDiv = document.getElementById('qcmResult');
-            
-            if (resultDiv) {
-                resultDiv.innerHTML = `
-                    <h3>Résultats du QCM</h3>
-                    <p>Score: ${score}/${total} (${percentage}%)</p>
-                    <p>${getScoreMessage(percentage)}</p>
-                `;
-            }
-        }
+        });
 
-        // Message selon le score
-        function getScoreMessage(score) {
-            if (score >= 90) return "Excellent travail! 🎉";
-            if (score >= 80) return "Très bon travail! 👍";
-            if (score >= 70) return "Bon travail! ✅";
-            if (score >= 60) return "Satisfaisant! 📚";
-            if (score >= 40) return "Continuez à réviser! 📘";
-            return "Besoin de réviser davantage! 🎯";
-        }
+        // Form Submission Handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Vous serez contacté dans les plus brefs délais.');
+            this.reset();
+        });
 
-        // Charger les données des étudiants
-        function loadStudents() {
-            const studentsContent = document.getElementById('studentsContent');
-            
-            // Simuler un chargement
-            setTimeout(() => {
-                // Générer le tableau HTML
-                let tableHTML = `
-                    <table class="students-list">
-                        <thead>
-                            <tr>
-                                <th>Nom</th>
-                                <th>Présence</th>
-                                <th>CC (/20)</th>
-                                <th>EF (/20)</th>
-                                <th>Moyenne (/20)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                `;
-                
-                studentsData.forEach(student => {
-                    tableHTML += `
-                        <tr>
-                            <td>${student.name}</td>
-                            <td class="${student.presence === 'Présent' ? 'present' : 'absent'}">${student.presence}</td>
-                            <td class="grade">${student.cc !== null ? student.cc : '-'}</td>
-                            <td class="grade">${student.ef !== null ? student.ef : '-'}</td>
-                            <td class="grade">${student.moyenne !== null ? student.moyenne : '-'}</td>
-                        </tr>
-                    `;
-                });
-                
-                tableHTML += `
-                        </tbody>
-                    </table>
-                `;
-                
-                studentsContent.innerHTML = tableHTML;
-            }, 800);
-        }
+        // Play Button Animation
+        document.querySelector('.play-button').addEventListener('click', function() {
+            alert('La vidéo sera bientôt disponible sur la plateforme e-learning');
+        });
 
-        // Vérifier la session au chargement de la page
-        function checkSession() {
-            const user = localStorage.getItem('currentUser');
-            
-            if (user) {
-                try {
-                    currentUser = JSON.parse(user);
-                    isAdmin = currentUser.role === 'admin';
-                    
-                    // Afficher le contenu principal
-                    showContent();
-                    
-                    // Afficher l'onglet admin si l'utilisateur est administrateur
-                    if (isAdmin) {
-                        document.getElementById('adminTab').style.display = 'block';
-                    }
-                } catch (e) {
-                    console.error('Erreur lors de la récupération de la session:', e);
-                    logout();
-                }
-            }
-        }
-
-        // Initialisation
-        document.addEventListener('DOMContentLoaded', function() {
-            // Vérifier la session existante
-            checkSession();
-            
-            // Afficher le premier onglet par défaut
-            showTab('cours');
-            
-            // Ajouter la gestion de la touche Entrée dans le formulaire de login
-            const passwordInput = document.getElementById('password');
-            if (passwordInput) {
-                passwordInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        login();
-                    }
-                });
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.2)';
+            } else {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             }
         });
     </script>
