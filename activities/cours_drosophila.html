@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle de Vie et Ovogenèse de Drosophila melanogaster</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a5490;
+            text-align: center;
+            border-bottom: 3px solid #2c7bb6;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c7bb6;
+            margin-top: 30px;
+            border-left: 5px solid #2c7bb6;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #006d5b;
+            margin-top: 25px;
+        }
+        .diagram {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .diagram img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        .diagram-caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        .info-box {
+            background-color: #e7f3ff;
+            border-left: 5px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c7bb6;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .gene-name {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #d63384;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cycle de Vie de Drosophila melanogaster<br>et Régulation de l'Ovogenèse</h1>
+        
+        <div class="info-box">
+            <strong>Niveau:</strong> Licence 3 / Master 1 - Biologie du Développement<br>
+            <strong>Durée du cours:</strong> ~10 jours à 25°C pour un cycle complet<br>
+            <strong>Modèle:</strong> Organisme holométabole (métamorphose complète)
+        </div>
+
+        <h2>1. Introduction Générale</h2>
+        <p>
+            <span class="gene-name">Drosophila melanogaster</span> est un insecte diptère qui constitue 
+            l'un des modèles les plus importants en génétique du développement depuis les travaux 
+            pionniers de T.H. Morgan au début du XXe siècle, puis ceux de C. Nüsslein-Volhard et 
+            E. Wieschaus (Prix Nobel 1995) sur les gènes de segmentation.
+        </p>
+        
+        <h3>Avantages du modèle Drosophila:</h3>
+        <ul>
+            <li>Cycle de vie court (~10 jours à 25°C)</li>
+            <li>Grande fécondité (~400-800 œufs par femelle)</li>
+            <li>Génome compact (~180 Mb, 4 paires de chromosomes, ~14 000 gènes)</li>
+            <li>Nombreux outils génétiques disponibles</li>
+            <li>Développement externe facilitant l'observation</li>
+        </ul>
+
+        <div class="diagram">
+            <img src="diagrams/cycle_vie.png" alt="Cycle de vie de Drosophila">
+            <div class="diagram-caption">
+                Figure 1: Cycle de vie complet de Drosophila melanogaster montrant les différents 
+                stades de développement de l'œuf à l'adulte.
+            </div>
+        </div>
+
+        <h2>2. Structure de l'Ovaire et Ovogenèse</h2>
+        <p>
+            L'ovaire de la drosophile est constitué d'environ 16 à 20 <strong>ovarioles</strong>, 
+            chacun étant une chaîne de chambres ovariennes (follicules) à différents stades de maturation.
+        </p>
+
+        <h3>2.1 Le Germarium</h3>
+        <p>
+            Le <span class="highlight">germarium</span>, situé à l'extrémité antérieure de chaque ovariole, 
+            contient les <strong>cellules souches germinales (GSC)</strong>. Une GSC se divise 
+            asymétriquement pour donner:
+        </p>
+        <ul>
+            <li>Une cellule souche (auto-renouvellement)</li>
+            <li>Un <strong>cystoblaste</strong> qui subit 4 divisions mitotiques incomplètes 
+            (les cellules restent connectées par des ponts cytoplasmiques appelés 
+            <em>ring canals</em>) → formation d'un cyste de 16 cellules</li>
+        </ul>
+
+        <div class="diagram">
+            <img src="diagrams/ovariole.png" alt="Structure de l'ovariole">
+            <div class="diagram-caption">
+                Figure 2: Organisation d'un ovariole montrant le germarium et les chambres ovariennes 
+                aux différents stades de développement (stades 1-14).
+            </div>
+        </div>
+
+        <h3>2.2 Différenciation du Cyste</h3>
+        <p>
+            Parmi les 16 cellules du cyste:
+        </p>
+        <ul>
+            <li><strong>1 devient l'ovocyte</strong> (celui qui possède 4 canaux annulaires, 
+            donc le plus connecté)</li>
+            <li><strong>15 deviennent les cellules nourricières</strong> (nurse cells), 
+            fortement polyploïdes, qui synthétisent activement des ARNm, des protéines et 
+            des organites qu'elles transfèrent à l'ovocyte via les canaux annulaires</li>
+        </ul>
+        <p>
+            Le cyste est entouré par une couche de <strong>cellules folliculaires</strong> 
+            (somatiques), qui joueront un rôle crucial dans l'établissement des axes de l'œuf 
+            et la synthèse du chorion.
+        </p>
+
+        <div class="diagram">
+            <img src="diagrams/ovogenese.png" alt="Processus d'ovogenèse">
+            <div class="diagram-caption">
+                Figure 3: Les quatre étapes clés de l'ovogenèse: division des GSC, formation 
+                du cyste de 16 cellules, polarisation A-P et D-V, et formation de la chambre ovarienne mature.
+            </div>
+        </div>
+
+        <h2>3. Établissement de la Polarité pendant l'Ovogenèse</h2>
+        <p>
+            La polarité de l'œuf est établie lors de l'ovogenèse, grâce à des interactions 
+            complexes entre l'ovocyte et les cellules folliculaires. Deux axes principaux 
+            sont définis:
+        </p>
+
+        <h3>3.1 Axe Antéro-Postérieur (A-P)</h3>
+        <ul>
+            <li>Le noyau de l'ovocyte migre vers la future extrémité antéro-dorsale</li>
+            <li>Le signal <span class="gene-name">Gurken</span> (un ligand de type EGF), 
+            produit par l'ovocyte, active le récepteur <span class="gene-name">Torpedo</span> 
+            (EGFR) dans les cellules folliculaires postérieures</li>
+            <li>Ce signal repositionne le cytosquelette de microtubules dans l'ovocyte 
+            (polarisation: extrémité "−" en antérieur, extrémité "+" en postérieur)</li>
+            <li>Les ARNm maternels sont alors localisés de manière polarisée:
+                <ul>
+                    <li><span class="gene-name">bicoid</span> → pôle antérieur 
+                    (transporté par la dynéine)</li>
+                    <li><span class="gene-name">oskar</span> → pôle postérieur 
+                    (transporté par la kinésine); Oskar recrute ensuite l'ARNm 
+                    <span class="gene-name">nanos</span></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>3.2 Axe Dorso-Ventral (D-V)</h3>
+        <ul>
+            <li>Le signal <span class="gene-name">Gurken</span>, émis depuis la position 
+            antéro-dorsale de l'ovocyte, active <span class="gene-name">Torpedo</span> 
+            dans les cellules folliculaires dorsales</li>
+            <li>Celles-ci répriment la production du ligand activant la voie 
+            <span class="gene-name">Toll</span></li>
+            <li>Le ligand Toll (Spätzle clivé) n'est actif que ventralement, 
+            préfigurant l'asymétrie dorso-ventrale de l'embryon</li>
+        </ul>
+
+        <div class="diagram">
+            <img src="diagrams/axes_polarity.png" alt="Établissement des axes de polarité">
+            <div class="diagram-caption">
+                Figure 4: Mécanismes d'établissement des axes antéro-postérieur et dorso-ventral 
+                pendant l'ovogenèse, montrant la localisation des morphogènes et la signalisation 
+                Gurken/EGFR.
+            </div>
+        </div>
+
+        <h2>4. Structure de l'Œuf Mature</h2>
+        <p>
+            L'œuf pondu (environ 0,5 mm de long) possède les caractéristiques suivantes:
+        </p>
+        <ul>
+            <li><strong>Une coquille</strong> (chorion + membrane vitelline) sécrétée 
+            par les cellules folliculaires</li>
+            <li><strong>Des micropyles</strong> (antérieurs) permettant l'entrée du spermatozoïde</li>
+            <li><strong>Des appendices dorsaux</strong> (respiratoires)</li>
+            <li><strong>Un cytoplasme riche</strong> en vitellus et en déterminants maternels localisés:
+                <ul>
+                    <li>ARNm <span class="gene-name">bicoid</span> au pôle antérieur</li>
+                    <li>ARNm <span class="gene-name">nanos</span> et plasme polaire au pôle postérieur</li>
+                    <li>ARNm <span class="gene-name">gurken</span> en antéro-dorsal</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>5. Gradients de Morphogènes Maternels</h2>
+        <p>
+            Les ARNm et protéines déposés dans l'ovocyte par la mère forment des 
+            <strong>gradients de morphogènes</strong> qui fournissent l'information de 
+            position dans l'embryon syncytial. Ces gradients agissent avant même la fécondation.
+        </p>
+
+        <h3>5.1 Système Antérieur - Bicoid</h3>
+        <ul>
+            <li>L'ARNm <span class="gene-name">bicoid</span> est localisé au pôle antérieur 
+            de l'ovocyte</li>
+            <li>Après fécondation, la protéine Bicoid (facteur de transcription à homéodomaine) 
+            est traduite et diffuse, formant un gradient antéro-postérieur décroissant</li>
+            <li><strong>Fonctions:</strong>
+                <ul>
+                    <li>Activateur transcriptionnel: active <span class="gene-name">hunchback</span></li>
+                    <li>Répresseur traductionnel: réprime <span class="gene-name">caudal</span> 
+                    dans la région antérieure</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>5.2 Système Postérieur - Nanos</h3>
+        <ul>
+            <li>L'ARNm <span class="gene-name">nanos</span> est localisé au pôle postérieur 
+            (piégé dans le plasme polaire)</li>
+            <li>La protéine Nanos diffuse depuis le pôle postérieur et forme un gradient 
+            postéro-antérieur décroissant</li>
+            <li><strong>Fonction:</strong> Réprime la traduction de l'ARNm maternel 
+            <span class="gene-name">hunchback</span> dans la région postérieure</li>
+        </ul>
+
+        <h3>5.3 Système Dorso-Ventral - Dorsal</h3>
+        <ul>
+            <li>La protéine maternelle Dorsal (facteur de transcription de la famille NF-κB) 
+            est initialement cytoplasmique</li>
+            <li>Ventralement, la cascade protéolytique clive Spätzle en sa forme active</li>
+            <li>Spätzle active le récepteur Toll, provoquant la libération de Dorsal qui 
+            entre dans les noyaux ventralement</li>
+            <li><strong>Gradient nucléaire de Dorsal:</strong>
+                <ul>
+                    <li>Forte concentration ventrale → activation des gènes mésodermiques 
+                    (<span class="gene-name">twist</span>, <span class="gene-name">snail</span>)</li>
+                    <li>Faible concentration dorsale → spécification de l'ectoderme</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="diagram">
+            <img src="diagrams/morphogen_gradients.png" alt="Gradients de morphogènes">
+            <div class="diagram-caption">
+                Figure 5: Représentation des gradients de concentration des morphogènes 
+                maternels Bicoid (antérieur), Nanos (postérieur) et Dorsal (ventral).
+            </div>
+        </div>
+
+        <h2>6. Fécondation et Développement Embryonnaire Précoce</h2>
+        
+        <h3>6.1 Fécondation</h3>
+        <ul>
+            <li>La fécondation est interne: le spermatozoïde est stocké dans la spermathèque</li>
+            <li>L'entrée du spermatozoïde déclenche la fin de la méiose de l'ovocyte</li>
+            <li>Les pronuclei mâle et femelle fusionnent → noyau zygotique diploïde (2n=8)</li>
+        </ul>
+
+        <h3>6.2 Divisions de Segmentation Syncytiales</h3>
+        <p>
+            Le développement précoce de la drosophile est caractérisé par un mode de clivage 
+            <strong>superficiel</strong> (méroblastique centrolécithique):
+        </p>
+        <ul>
+            <li><strong>Phase syncytiale interne</strong> (cycles 1-9, ~0-1,5h): 
+            divisions nucléaires synchrones et rapides (~8-10 min/cycle) sans cytocinèse</li>
+            <li><strong>Migration vers la périphérie</strong> (cycles 8-9): les noyaux migrent 
+            vers le cortex de l'œuf</li>
+            <li><strong>Blastoderme syncytial</strong> (cycles 10-13, ~1,5-2,5h): 
+            ~6 000 noyaux forment une monocouche</li>
+            <li><strong>Cellularisation</strong> (cycle 14, ~2,5-3h): formation du blastoderme 
+            cellulaire (~6 000 cellules)</li>
+        </ul>
+
+        <h2>7. Cascade de Segmentation</h2>
+        <p>
+            L'établissement de la segmentation repose sur une <strong>cascade hiérarchique 
+            de régulation génique</strong> impliquant successivement:
+        </p>
+
+        <div class="diagram">
+            <img src="diagrams/segmentation_cascade.png" alt="Cascade de segmentation">
+            <div class="diagram-caption">
+                Figure 6: Hiérarchie de la cascade de segmentation montrant les cinq niveaux 
+                de régulation génique, des gènes maternels aux gènes homéotiques.
+            </div>
+        </div>
+
+        <h3>7.1 Gènes Gap</h3>
+        <p>
+            Premiers gènes zygotiques activés, ils codent pour des facteurs de transcription 
+            et s'expriment en larges domaines le long de l'axe A-P. Leur mutation entraîne 
+            la délétion de groupes de segments contigus.
+        </p>
+        <table>
+            <tr>
+                <th>Gène</th>
+                <th>Domaine d'expression</th>
+                <th>Régulation</th>
+            </tr>
+            <tr>
+                <td><span class="gene-name">hunchback</span></td>
+                <td>Antérieur large</td>
+                <td>Activé par Bicoid</td>
+            </tr>
+            <tr>
+                <td><span class="gene-name">Krüppel</span></td>
+                <td>Central (thorax post. + abd. ant.)</td>
+                <td>Niveaux intermédiaires de Bicoid/Hunchback</td>
+            </tr>
+            <tr>
+                <td><span class="gene-name">knirps</span></td>
+                <td>Postérieur (abdomen moyen)</td>
+                <td>Dérépression (absence de Hunchback)</td>
+            </tr>
+            <tr>
+                <td><span class="gene-name">giant</span></td>
+                <td>Deux bandes (ant. + post.)</td>
+                <td>Bicoid (ant.), Caudal (post.)</td>
+            </tr>
+        </table>
+
+        <h3>7.2 Gènes Pair-Rule</h3>
+        <p>
+            Ils s'expriment en 7 bandes alternées (un parasegment sur deux). Leur mutation 
+            entraîne la perte de portions alternées de l'embryon.
+        </p>
+        <ul>
+            <li><strong>Primaires:</strong> <span class="gene-name">even-skipped</span>, 
+            <span class="gene-name">hairy</span>, <span class="gene-name">runt</span> 
+            (régulés directement par les gap)</li>
+            <li><strong>Secondaires:</strong> <span class="gene-name">fushi tarazu</span>, 
+            <span class="gene-name">paired</span> (régulés par les primaires)</li>
+        </ul>
+
+        <h3>7.3 Gènes de Polarité Segmentaire</h3>
+        <p>
+            Ils s'expriment en 14 bandes (une par parasegment) et définissent la polarité 
+            au sein de chaque segment via des voies de signalisation intercellulaire.
+        </p>
+        <ul>
+            <li><span class="gene-name">engrailed</span>: marque la rangée postérieure 
+            de chaque parasegment</li>
+            <li><span class="gene-name">wingless</span> (Wnt): rangée antérieure à engrailed</li>
+            <li><span class="gene-name">hedgehog</span>: sécrété par les cellules engrailed</li>
+            <li><strong>Boucle de rétroaction:</strong> Wingless ↔ Engrailed/Hedgehog 
+            maintient les limites parasegmentaires</li>
+        </ul>
+
+        <h3>7.4 Gènes Homéotiques (Hox)</h3>
+        <p>
+            Ils confèrent l'identité spécifique à chaque segment. Les gènes Hox de la 
+            drosophile sont regroupés en deux complexes sur le chromosome 3:
+        </p>
+        <ul>
+            <li><strong>ANT-C (Antennapedia Complex):</strong> contrôle la tête et le 
+            thorax antérieur</li>
+            <li><strong>BX-C (Bithorax Complex):</strong> régit le thorax postérieur 
+            et l'abdomen</li>
+        </ul>
+
+        <div class="info-box">
+            <strong>Point clé:</strong> La cascade complète de segmentation s'établit en 
+            environ 5 heures après la fécondation, illustrant la rapidité et la précision 
+            du développement embryonnaire chez Drosophila.
+        </div>
+
+        <h2>8. Conclusion</h2>
+        <p>
+            L'étude du cycle de vie et de l'ovogenèse de <span class="gene-name">Drosophila 
+            melanogaster</span> a permis de découvrir des principes fondamentaux de la 
+            biologie du développement:
+        </p>
+        <ul>
+            <li>Établissement des axes embryonnaires par des gradients de morphogènes</li>
+            <li>Hérarchie de régulation génique en cascade</li>
+            <li>Conservation évolutive des mécanismes (gènes Hox, voies Wnt, Hedgehog, Toll)</li>
+            <li>Importance de la localisation subcellulaire des ARNm</li>
+            <li>Rôle crucial des interactions cellule-cellule</li>
+        </ul>
+        <p>
+            Ces mécanismes, conservés chez les métazoaires, illustrent comment des asymétries 
+            moléculaires subtiles peuvent générer une organisation complexe et symétrique à 
+            partir d'un œuf initialement simple.
+        </p>
+
+        <div class="footer">
+            <p><strong>Références principales:</strong></p>
+            <p>
+            Nüsslein-Volhard, C. & Wieschaus, E. (1980). Nature, 287, 795–801.<br>
+            Gilbert, S.F. Developmental Biology (12e éd.).<br>
+            Wolpert, L. et al. Principles of Development (6e éd.).
+            </p>
+            <p>Document généré le 31/03/2026</p>
+        </div>
+    </div>
+</body>
+</html>
+        
