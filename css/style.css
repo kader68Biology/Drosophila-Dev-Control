@@ -195,3 +195,24 @@ footer a {
 footer a:hover {
     color: var(--primary) !important;
 }
+/* Fix for rectangular logo */
+.header-logo,
+.univ-logo-img,
+.nav-logo {
+    width: 120px;
+    height: 80px;  /* Match your actual logo height */
+    object-fit: contain;  /* Prevents distortion */
+    background: #fff;
+    border-radius: 5px;  /* Slight rounding instead of full circle */
+    padding: 5px;
+}
+
+/* Instructor photo - keep circular */
+.header-instructor-photo,
+.instructor-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;  /* Circular */
+    object-fit: cover;  /* Crops to fit circle */
+    border: 3px solid var(--primary);
+}
