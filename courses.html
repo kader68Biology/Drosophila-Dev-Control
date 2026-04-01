@@ -18,11 +18,7 @@
             --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -32,310 +28,171 @@
             min-height: 100vh;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
-        /* Header */
         header {
             background: var(--white);
             padding: 20px 0;
             box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: sticky; top: 0; z-index: 1000;
         }
 
         .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1200px; margin: 0 auto; padding: 0 20px;
         }
 
         .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-size: 1.5em; font-weight: bold; color: var(--primary-color);
             text-decoration: none;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
+        nav ul { display: flex; list-style: none; gap: 30px; }
         nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
+            text-decoration: none; color: var(--text-dark); font-weight: 500;
             transition: color 0.3s;
         }
+        nav a:hover { color: var(--primary-color); }
 
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Main Content */
         .main-content {
-            background: var(--white);
-            padding: 40px 20px;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+            background: var(--white); padding: 40px 20px;
+            margin: 20px auto; border-radius: 10px; box-shadow: var(--shadow);
         }
 
         .page-title {
-            text-align: center;
-            color: var(--secondary-color);
-            font-size: 2.2em;
-            margin-bottom: 20px;
+            text-align: center; color: var(--secondary-color);
+            font-size: 2.2em; margin-bottom: 20px;
         }
 
         .page-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            font-size: 1.2em;
-            margin-bottom: 40px;
+            text-align: center; color: var(--text-light);
+            font-size: 1.2em; margin-bottom: 40px;
         }
 
-        /* Chapters Grid */
         .chapters-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px; max-width: 1200px; margin: 0 auto;
         }
 
         .chapter-card {
-            background: var(--light-bg);
-            padding: 30px;
-            border-radius: 10px;
+            background: var(--light-bg); padding: 30px; border-radius: 10px;
             border-left: 5px solid var(--primary-color);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .chapter-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px); box-shadow: var(--shadow-hover);
         }
 
-        .chapter-icon {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-        }
-
+        .chapter-icon { font-size: 2.5em; margin-bottom: 15px; }
         .chapter-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            font-size: 1.4em;
+            color: var(--secondary-color); margin-bottom: 15px; font-size: 1.4em;
         }
+        .chapter-card p { color: var(--text-light); margin-bottom: 20px; }
 
-        .chapter-card p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
-
-        .chapter-links {
-            margin-top: 20px;
-        }
-
+        .chapter-links { margin-top: 20px; }
         .chapter-links h4 {
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            font-size: 1em;
+            color: var(--accent-color); margin-bottom: 10px; font-size: 1em;
         }
-
         .chapter-links a {
-            display: block;
-            color: var(--primary-color);
-            text-decoration: none;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border-color);
+            display: block; color: var(--primary-color); text-decoration: none;
+            padding: 8px 0; border-bottom: 1px solid var(--border-color);
             transition: color 0.3s;
         }
-
-        .chapter-links a:hover {
-            color: var(--secondary-color);
-            padding-left: 5px;
-        }
-
-        .chapter-links a:last-child {
-            border-bottom: none;
-        }
+        .chapter-links a:hover { color: var(--secondary-color); padding-left: 5px; }
+        .chapter-links a:last-child { border-bottom: none; }
 
         .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.3s;
-            margin-top: 15px;
+            display: inline-block; background: var(--primary-color);
+            color: var(--white); padding: 10px 25px; border-radius: 5px;
+            text-decoration: none; font-weight: 600;
+            transition: background 0.3s, transform 0.3s; margin-top: 15px;
+        }
+        .btn:hover { background: var(--secondary-color); transform: translateY(-2px); }
+        .btn-pdf { background: var(--accent-color); }
+        .btn-html { background: #764ba2; }
+
+        /* Resource Categories Grid */
+        .resource-categories {
+            background: var(--white); padding: 40px 20px;
+            margin: 20px auto; border-radius: 10px; box-shadow: var(--shadow);
         }
 
-        .btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
+        .categories-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; max-width: 1200px; margin: 0 auto;
         }
 
-        .btn-pdf {
-            background: var(--accent-color);
+        .category-card {
+            background: var(--light-bg); padding: 25px; border-radius: 10px;
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .btn-html {
-            background: #764ba2;
+        .category-card:hover {
+            transform: translateY(-5px); box-shadow: var(--shadow-hover);
         }
 
-        /* Interactive Activities Section */
-        .activities-section {
-            background: var(--white);
-            padding: 40px 20px;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+        .category-icon { font-size: 2.5em; margin-bottom: 15px; }
+        .category-card h3 {
+            color: var(--secondary-color); margin-bottom: 15px; font-size: 1.3em;
         }
-
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
+        .category-card ul { list-style: none; margin-bottom: 20px; }
+        .category-card li {
+            padding: 8px 0; color: var(--text-light);
+            border-bottom: 1px solid var(--border-color);
         }
-
-        .activity-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: var(--white);
-            padding: 25px;
-            border-radius: 10px;
-            transition: transform 0.3s;
+        .category-card li:last-child { border-bottom: none; }
+        .category-card a {
+            color: var(--primary-color); text-decoration: none; font-weight: 500;
         }
-
-        .activity-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .activity-item h4 {
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-
-        .activity-item a {
-            color: var(--white);
-            text-decoration: none;
-            display: block;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .activity-item a:last-child {
-            border-bottom: none;
+        .category-card a:hover { text-decoration: underline; }
+        .category-card .coming-soon {
+            color: #999; font-style: italic; cursor: not-allowed;
         }
 
         /* Figures Gallery */
         .figures-section {
-            background: var(--white);
-            padding: 40px 20px;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+            background: var(--white); padding: 40px 20px;
+            margin: 20px auto; border-radius: 10px; box-shadow: var(--shadow);
         }
 
         .figures-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; max-width: 1200px; margin: 0 auto;
         }
 
         .figure-card {
-            background: var(--light-bg);
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s;
+            background: var(--light-bg); padding: 15px; border-radius: 8px;
+            text-align: center; transition: transform 0.3s;
         }
-
-        .figure-card:hover {
-            transform: translateY(-3px);
-        }
-
+        .figure-card:hover { transform: translateY(-3px); }
         .figure-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            width: 100%; height: 150px; object-fit: cover;
+            border-radius: 5px; margin-bottom: 10px;
         }
-
-        .figure-card p {
-            font-size: 0.9em;
-            color: var(--text-light);
-        }
-
+        .figure-card p { font-size: 0.9em; color: var(--text-light); }
         .figure-card a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
+            color: var(--primary-color); text-decoration: none; font-weight: 500;
         }
 
-        /* Footer */
         footer {
-            background: var(--secondary-color);
-            color: var(--white);
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 40px;
+            background: var(--secondary-color); color: var(--white);
+            padding: 30px 20px; text-align: center; margin-top: 40px;
         }
+        footer a { color: var(--white); text-decoration: none; margin: 0 10px; }
+        footer a:hover { text-decoration: underline; }
 
-        footer a {
-            color: var(--white);
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Back Button */
         .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
+            display: inline-block; margin-bottom: 20px;
+            color: var(--primary-color); text-decoration: none; font-weight: 500;
         }
+        .back-btn:hover { text-decoration: underline; }
 
-        .back-btn:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .chapters-grid,
-            .activities-grid,
-            .figures-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .page-title {
-                font-size: 1.8em;
-            }
+            nav ul { display: none; }
+            .chapters-grid, .categories-grid, .figures-grid { grid-template-columns: 1fr; }
+            .page-title { font-size: 1.8em; }
         }
     </style>
 </head>
@@ -375,9 +232,8 @@
                         <a href="documents/cours_drosophila.pdf">→ Télécharger PDF Complet</a>
                         <a href="activities/cours_drosophila.html">→ Version HTML Interactive</a>
                         
-                        <h4 style="margin-top: 15px;">🎮 Activités :</h4>
+                        <h4 style="margin-top: 15px;">🧪 TD Associés :</h4>
                         <a href="activities/TD2_axesAPDV_interactif.html">→ TD2: Axes AP/DV</a>
-                        <a href="activities/Diagrammes_Interactifs_Drosophile.html">→ Diagrammes Interactifs</a>
                     </div>
                     
                     <a href="documents/cours_drosophila.pdf" class="btn btn-pdf">📥 Télécharger PDF</a>
@@ -394,9 +250,8 @@
                         <a href="documents/cours_drosophila_ovogenese.pdf">→ Télécharger PDF Ovogenèse</a>
                         <a href="activities/cours_drosophila_ovogenese.html">→ Version HTML Interactive</a>
                         
-                        <h4 style="margin-top: 15px;">🎮 Activités :</h4>
+                        <h4 style="margin-top: 15px;">🧪 TD Associés :</h4>
                         <a href="activities/OvoRegFinal_interactif.html">→ OvoReg Final</a>
-                        <a href="activities/Diagrammes_AP_Interactif.html">→ Diagrammes AP</a>
                     </div>
                     
                     <a href="documents/cours_drosophila_ovogenese.pdf" class="btn btn-pdf">📥 Télécharger PDF</a>
@@ -413,64 +268,66 @@
                         <a href="documents/cours_drosophila.pdf">→ Télécharger PDF Cycle de Vie</a>
                         <a href="activities/cours_drosophila.html">→ Version HTML Interactive</a>
                         
-                        <h4 style="margin-top: 15px;">🎮 Activités :</h4>
-                        <a href="activities/TD4_interactive.html">→ TD4 Interactive</a>
-                        <a href="activities/Diagrammes_Interactifs_Drosophile.html">→ Diagrammes Segmentation</a>
+                        <h4 style="margin-top: 15px;">🧪 TD Associés :</h4>
+                        <a href="activities/TD4_interactive.html">→ TD4: Segmentation</a>
                     </div>
                     
                     <a href="documents/cours_drosophila.pdf" class="btn btn-pdf">📥 Télécharger PDF</a>
                 </div>
-
-                <!-- Chapitre 4 -->
-                <div class="chapter-card">
-                    <div class="chapter-icon">📚</div>
-                    <h3>Chapitre 4 : Travaux Dirigés (TD)</h3>
-                    <p>Exercices pratiques et études de cas</p>
-                    
-                    <div class="chapter-links">
-                        <h4>🎮 TD Interactifs :</h4>
-                        <a href="activities/TD2_axesAPDV_interactif.html">→ TD2: Axes AP/DV</a>
-                        <a href="activities/TD4_interactive.html">→ TD4: Segmentation</a>
-                        <a href="activities/OvoRegFinal_interactif.html">→ OvoReg Final</a>
-                        
-                        <h4 style="margin-top: 15px;">📄 Documents :</h4>
-                        <a href="activities/annonce_bienvenue.html">→ Annonce Bienvenue</a>
-                    </div>
-                    
-                    <a href="activities/TD4_interactive.html" class="btn btn-html">🎮 Accéder aux TD</a>
-                </div>
             </div>
         </section>
 
-        <!-- Interactive Activities Section -->
-        <section class="activities-section">
-            <h2 class="page-title">🎮 Toutes les Activités Interactives</h2>
-            <p class="page-subtitle">Cours HTML, TD interactifs et diagrammes</p>
+        <!-- Resource Categories Section -->
+        <section class="resource-categories">
+            <h2 class="page-title">📚 Toutes les Ressources par Catégorie</h2>
+            <p class="page-subtitle">Naviguez par type de ressource pédagogique</p>
             
-            <div class="activities-grid">
-                <div class="activity-item">
-                    <h4>📚 Cours HTML Interactifs</h4>
-                    <a href="activities/cours_drosophila.html">→ Cours Cycle de Vie (HTML)</a>
-                    <a href="activities/cours_drosophila_ovogenese.html">→ Cours Ovogenèse (HTML)</a>
+            <div class="categories-grid">
+                <!-- 🎮 Cours HTML Interactifs -->
+                <div class="category-card">
+                    <div class="category-icon">🎮</div>
+                    <h3>Cours HTML Interactifs</h3>
+                    <ul>
+                        <li><a href="activities/cours_drosophila.html">→ Cycle de Vie (HTML)</a></li>
+                        <li><a href="activities/cours_drosophila_ovogenese.html">→ Ovogenèse (HTML)</a></li>
+                    </ul>
+                    <a href="activities/cours_drosophila.html" class="btn btn-html">Accéder aux Cours</a>
                 </div>
 
-                <div class="activity-item">
-                    <h4>🧪 Travaux Dirigés</h4>
-                    <a href="activities/TD2_axesAPDV_interactif.html">→ TD2: Axes AP/DV</a>
-                    <a href="activities/TD4_interactive.html">→ TD4: Segmentation</a>
-                    <a href="activities/OvoRegFinal_interactif.html">→ OvoReg Final</a>
+                <!-- 🧪 TD Interactifs -->
+                <div class="category-card">
+                    <div class="category-icon">🧪</div>
+                    <h3>TD Interactifs</h3>
+                    <ul>
+                        <li><a href="activities/TD2_axesAPDV_interactif.html">→ TD2: Axes AP/DV</a></li>
+                        <li><a href="activities/TD4_interactive.html">→ TD4: Segmentation</a></li>
+                        <li><a href="activities/OvoRegFinal_interactif.html">→ OvoReg Final</a></li>
+                    </ul>
+                    <a href="activities/TD4_interactive.html" class="btn btn-html">Accéder aux TD</a>
                 </div>
 
-                <div class="activity-item">
-                    <h4>📊 Diagrammes Interactifs</h4>
-                    <a href="activities/Diagrammes_Interactifs_Drosophile.html">→ Diagrammes Drosophile</a>
-                    <a href="activities/Diagrammes_AP_Interactif.html">→ Diagrammes AP</a>
+                <!-- 📋 Contrôles Continus (CC) -->
+                <div class="category-card">
+                    <div class="category-icon">📋</div>
+                    <h3>Contrôles Continus (CC)</h3>
+                    <ul>
+                        <li><span class="coming-soon">CC1 - Ovogenèse & Axes (à venir)</span></li>
+                        <li><span class="coming-soon">CC2 - Segmentation (à venir)</span></li>
+                        <li><span class="coming-soon">Corrigés types (à venir)</span></li>
+                    </ul>
+                    <span class="btn" style="background:#999;cursor:not-allowed;">📁 Bientôt disponible</span>
                 </div>
 
-                <div class="activity-item">
-                    <h4>📢 Informations</h4>
-                    <a href="activities/annonce_bienvenue.html">→ Annonce Bienvenue</a>
-                    <a href="index.html#video">→ Vidéo de Présentation</a>
+                <!-- 📊 Présentations PPTX -->
+                <div class="category-card">
+                    <div class="category-icon">📊</div>
+                    <h3>Présentations PPTX</h3>
+                    <ul>
+                        <li><span class="coming-soon">Support de cours L3 (à venir)</span></li>
+                        <li><span class="coming-soon">Schémas animés (à venir)</span></li>
+                        <li><span class="coming-soon">Révisions examen (à venir)</span></li>
+                    </ul>
+                    <span class="btn" style="background:#999;cursor:not-allowed;">📁 Bientôt disponible</span>
                 </div>
             </div>
         </section>
@@ -486,43 +343,36 @@
                     <p><strong>Fig 1:</strong> Cycle de Vie</p>
                     <a href="activities/fig01_cycle_vie.svg">→ Version SVG</a>
                 </div>
-
                 <div class="figure-card">
                     <img src="activities/fig02_ovariole.png" alt="Ovariole">
                     <p><strong>Fig 2:</strong> Structure Ovariole</p>
                     <a href="activities/fig02_ovariole.svg">→ Version SVG</a>
                 </div>
-
                 <div class="figure-card">
                     <img src="activities/fig03_chambre_ovarienne.png" alt="Chambre ovarienne">
                     <p><strong>Fig 3:</strong> Chambre Ovarienne</p>
                     <a href="activities/fig03_chambre_ovarienne.svg">→ Version SVG</a>
                 </div>
-
                 <div class="figure-card">
                     <img src="activities/fig04_regulation.png" alt="Régulation">
                     <p><strong>Fig 4:</strong> Régulation</p>
                     <a href="activities/fig04_regulation.svg">→ Version SVG</a>
                 </div>
-
                 <div class="figure-card">
                     <img src="activities/fig05_axes_polarite.png" alt="Axes polarité">
                     <p><strong>Fig 5:</strong> Axes Polarité</p>
                     <a href="activities/fig05_axes_polarite.svg">→ Version SVG</a>
                 </div>
-
                 <div class="figure-card">
                     <img src="activities/fig06_vitellogenese.png" alt="Vitellogenèse">
                     <p><strong>Fig 6:</strong> Vitellogenèse</p>
                     <a href="activities/fig06_vitellogenese.svg">→ Version SVG</a>
                 </div>
-
                 <div class="figure-card">
                     <img src="activities/fig07_signalisation.png" alt="Signalisation">
                     <p><strong>Fig 7:</strong> Signalisation</p>
                     <a href="activities/fig07_signalisation.svg">→ Version SVG</a>
                 </div>
-
                 <div class="figure-card">
                     <img src="activities/fig08_timeline.png" alt="Timeline">
                     <p><strong>Fig 8:</strong> Timeline</p>
