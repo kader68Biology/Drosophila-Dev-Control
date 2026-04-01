@@ -889,3 +889,178 @@
     display: block;
     margin: 0 auto 15px auto;
 }
+
+/********** Professional Header Section **********/
+.header-top {
+    background: linear-gradient(135deg, #0c3d6e 0%, #1a5490 50%, #006d5b 100%);
+    padding: 30px 0;
+    border-top: 4px solid #f69050;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.university-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.university-info h2 {
+    color: #fff;
+    font-size: 1.5em;
+    margin-bottom: 8px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.university-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95em;
+    margin: 3px 0;
+}
+
+.instructor-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-instructor-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #f69050;
+    object-fit: cover;
+    background: #fff;
+}
+
+.instructor-details h3 {
+    color: #f69050;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.instructor-details p {
+    color: #fff;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.instructor-email {
+    color: #fff;
+    font-size: 0.85em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.instructor-email:hover {
+    color: #f69050;
+    text-decoration: underline;
+}
+
+/* Navigation Bar Updates */
+.navbar-light {
+    background: #fff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #1a5490 !important;
+}
+
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--dark) !important;
+    font-weight: 600;
+    padding: 15px 20px !important;
+    transition: all 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+    background: rgba(246, 144, 80, 0.1);
+    border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .header-top-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .university-header,
+    .instructor-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-instructor-photo {
+        margin: 0 auto;
+    }
+    
+    .navbar-brand {
+        justify-content: center;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        padding: 20px 0;
+    }
+    
+    .header-logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .university-info h2 {
+        font-size: 1.2em;
+    }
+    
+    .header-instructor-photo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .instructor-details h3 {
+        font-size: 1em;
+    }
+}
