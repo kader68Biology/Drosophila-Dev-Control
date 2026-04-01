@@ -1,7 +1,8 @@
 /********** Template CSS **********/
-:root {
-    --primary: #f69050;
-    --light: #F0FBFC;
+::root {
+    --primary: #f69050;      /* Keep your template orange */
+    --secondary: #1a5490;    /* Add blue for hero */
+    --accent: #006d5b;       /* Add green for hero */
     --light: #f0e4de;
     --dark: #181d38;
 }
@@ -559,4 +560,310 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+/********** Custom Hero Section - Drosophila Course **********/
+
+/* Hero Section Professional */
+.hero {
+    background: linear-gradient(135deg, #0c3d6e 0%, #1a5490 50%, #006d5b 100%);
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-top: 4px solid #f69050;
+}
+
+.hero-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 550px;
+}
+
+.hero-sidebar {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 40px 30px;
+    width: 320px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.university-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.univ-logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.university-logo h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #f69050;
+    line-height: 1.3;
+}
+
+.university-logo p {
+    font-size: 0.85em;
+    margin: 5px 0;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.instructor-info {
+    text-align: center;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.instructor-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #f69050;
+    margin-bottom: 15px;
+    object-fit: cover;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.instructor-info h4 {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: 600;
+}
+
+.instructor-info p {
+    font-size: 0.85em;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.email-link {
+    color: #f69050;
+    text-decoration: none;
+    font-size: 0.8em;
+    display: block;
+    word-break: break-all;
+    transition: all 0.3s;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+    color: #f1c40f;
+}
+
+.hero-main {
+    flex: 1;
+    padding: 50px 60px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-header h1 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: white;
+    line-height: 1.3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    opacity: 0.95;
+    margin-bottom: 35px;
+    color: #e0e0e0;
+    font-weight: 300;
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+}
+
+.badge:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.badge-icon {
+    font-size: 1.2em;
+}
+
+.badge-text {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.hero-tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.tab {
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.tab:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tab.active {
+    background: #27ae60;
+    color: white;
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.4);
+}
+
+.tab-icon {
+    font-size: 1.1em;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background: #f69050;
+    color: white;
+    padding: 14px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(246, 144, 80, 0.3);
+}
+
+.btn-primary:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(246, 144, 80, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 14px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 30px 20px;
+    }
+
+    .hero-main {
+        padding: 40px 30px;
+    }
+
+    .hero-header h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-badges {
+        justify-content: center;
+    }
+
+    .hero-tabs {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .instructor-photo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-header h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-subtitle {
+        font-size: 1em;
+    }
+
+    .badge {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+
+    .tab {
+        padding: 10px 15px;
+        font-size: 0.85em;
+    }
+
+    .univ-logo-img {
+        width: 80px;
+        height: 80px;
+    }
 }
