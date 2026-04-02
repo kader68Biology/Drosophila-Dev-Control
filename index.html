@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aspect Génétique du Développement Embryonnaire - L3 Génétique</title>
     <style>
-        :root {
-            --primary-color: #2c7bb6;
-            --secondary-color: #1a5490;
-            --accent-color: #006d5b;
-            --light-bg: #f4f7fa;
-            --white: #ffffff;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --border-color: #e0e0e0;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -26,199 +13,131 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background-color: #f0f2f5;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header */
-        header {
-            background: var(--white);
-            padding: 20px 0;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        /* Main Header Section */
+        .header-main {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: #ffffff;
+            padding: 30px 20px;
+            border-bottom: 4px solid #00d2ff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            flex-direction: row;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            gap: 40px;
         }
 
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        nav ul {
+        /* Left Section: University & Instructor Info */
+        .info-section {
+            flex: 1;
             display: flex;
-            list-style: none;
-            gap: 30px;
+            flex-direction: column;
+            gap: 15px;
+            padding-right: 30px;
+            border-right: 1px solid rgba(255,255,255,0.2);
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.3s;
+        .university-info h3 {
+            color: #00d2ff;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: #84d6ea;
         }
 
-        nav a:hover {
-            color: var(--primary-color);
+        .university-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
         }
 
-        .mobile-menu {
-            display: none;
-            font-size: 1.5em;
-            cursor: pointer;
+        .faculty-name {
+            font-size: 0.9rem;
+            color: #a8d6ea;
+            margin-bottom: 12px;
         }
 
-        /* Hero Section */
-        .hero {
-            background: var(--white);
-            padding: 60px 20px;
-            text-align: center;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .hero h1 {
-            color: var(--secondary-color);
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            color: var(--text-light);
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        .hero-info {
-            background: var(--light-bg);
-            padding: 20px;
+        .instructor-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 12px;
             border-radius: 8px;
-            margin: 20px auto;
-            max-width: 800px;
         }
 
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
+        .instructor-photo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .instructor-info h4 {
+            color: #ffffff;
+            font-size: 0.95rem;
             font-weight: 600;
-            transition: background 0.3s, transform 0.3s;
+            margin-bottom: 2px;
         }
 
-        .btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
+        .instructor-info p {
+            color: #a8d6ea;
+            font-size: 0.8rem;
+            margin: 0;
         }
 
-        /* Resources Section */
-        .resources {
-            background: var(--white);
-            padding: 40px 20px;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+        /* Right Side: Main Content */
+        .main-content {
+            flex: 2;
+            color: #ffffff;
         }
 
-        .section-title {
-            text-align: center;
-            color: var(--secondary-color);
-            font-size: 2em;
-            margin-bottom: 40px;
+        .main-content h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.3;
         }
 
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
+        .subtitle {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: #e0e0e0;
+            margin-bottom: 16px;
+            font-style: italic;
         }
 
-        .resource-card {
-            background: var(--light-bg);
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 5px solid var(--primary-color);
-            transition: transform 0.3s, box-shadow 0.3s;
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .resource-icon {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-        }
-
-        .resource-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        .resource-card ul {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-
-        .resource-card li {
-            padding: 8px 0;
-            color: var(--text-light);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .resource-card li:last-child {
-            border-bottom: none;
-        }
-
-        .resource-card a {
-            color: var(--primary-color);
-            text-decoration: none;
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
             font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .resource-card a:hover {
-            text-decoration: underline;
-        }
-
-        .download-btn {
-            display: inline-block;
-            background: var(--accent-color);
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 0.9em;
-            transition: background 0.3s;
-        }
-
-        .download-btn:hover {
-            background: var(--secondary-color);
+        .badge-icon {
+            font-size: 1rem;
         }
 
         /* Video Section */
@@ -386,9 +305,84 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Tabs at the bottom */
+        .header-tabs {
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            flex: 1;
+            min-width: 120px;
+            padding: 12px 16px;
+            text-align: center;
+            color: #ffffff;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .tab:last-child {
+            border-right: none;
+        }
+
+        .tab:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .tab.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-bottom: 3px solid #ffffff;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .tab {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <!-- Left Column: Info -->
+            <div class="info-column">
+                <div class="title">TD N°2 — Régulation des axes AP & DV</div>
+                <div class="subtitle">chez Drosophila melanogaster</div>
+                <div class="subtitle">Type sauvage & Cas de mutations · Analyse des gradients de morphogènes</div>
+                
+                <div class="tags">
+                    <span>⏱ Durée : 2h30</span>
+                    <span>📄 Documents ↓</span>
+                    <span>🎓 Barème : /20 pts</span>
+                    <span>🎓 L3/M1 · 2024-2025</span>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="nav-tabs">
+                <a href="#accueil" class="active">📄 Sujet du TD</a>
+                <a href="#visualiseur">📊 Visualiseur interactif</a>
+                <a href="#corrige">🔐 Corrigé 🔐</a>
+                <a href="#quiz">📊 Quiz</a>
+            </nav>
+        </div>
+    </header>
+</body>
+
     <!-- Professional University Header -->
 <header class="uni-header" style="background: linear-gradient(135deg, #003366 0%, #0056b3 50%, #0077cc 100%); padding: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
