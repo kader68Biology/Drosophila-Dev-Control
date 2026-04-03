@@ -119,83 +119,87 @@
             border-bottom-color: var(--primary-color);
         }
 
-        /* Photo de profil dans l'en-tête */
-        .header-profile {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-left: 1rem;
-        }
+        /* Photo de profil + coordonnées */
+.header-profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-left: 1rem;
+}
 
-        .profile-photo {
-            width: 88px;       /* au lieu de 44px (x2) */
-            height: 88px;
-            border-radius: 100%;
-            object-fit: cover;
-            border: 2px solid var(--white);
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.2s;
-            background: #f0f2f5;
-        }
+.profile-photo {
+    width: 88px;
+    height: 88px;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 2px solid var(--white);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s;
+    background: #f0f2f5;
+}
+.profile-photo:hover {
+    transform: scale(1.02);
+}
 
-        .profile-photo:hover {
-            transform: scale(1.02);
-        }
-<div class="header-profile">
-    <img src="images/photo_allouche.jpg" alt="Dr Abdelkader ALLOUCHE" class="profile-photo" onerror="this.src='https://placehold.co/88x88?text=👨‍🏫';">
-    <div class="teacher-contact-info">
-        <span class="teacher-badge">Dr A. Allouche</span>
-        <div class="contact-details">
-            <p>🏛️ Université d'Oran 1 – Ahmed Ben Bella</p>
-            <p>🔬 Faculté SNV – Département de Biotechnologie</p>
-            <p>👨‍🏫 Maître de Conférences en Biologie</p>
-            <p>🏢 Institut national de recherche</p>
-        </div>
-    </div>
-</div>
-        .teacher-contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 6px;
-        }
+.teacher-contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
 
-        .contact-details {
-            background: rgba(15, 59, 95, 0.08);
-            backdrop-filter: blur(4px);
-            border-radius: 20px;
-            padding: 10px 16px;
-            font-size: 0.75rem;
-            color: var(--text-dark);
-            max-width: 260px;
-            line-height: 1.4;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: var(--shadow-sm);
-        }
+.teacher-badge {
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: #eef2ff;
+    padding: 4px 10px;
+    border-radius: 30px;
+    color: var(--primary-color);
+    display: inline-block;
+}
 
-        .contact-details p {
-            margin: 4px 0;
-            white-space: nowrap;
-            }
+.contact-details {
+    background: rgba(15, 59, 95, 0.08);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    padding: 10px 16px;
+    font-size: 0.75rem;
+    color: var(--text-dark);
+    max-width: 280px;
+    line-height: 1.4;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-sm);
+}
 
-        /* Adaptation mobile */
-        @media (max-width: 880px) {
-            .contact-details p {
-                white-space: normal;
-                font-size: 0.7rem;
-            }
-            .profile-photo {
-                width: 64px;
-                height: 64px;
-            }
-            .logo-img {
-                height: 64px;
-            }
-            .contact-details {
-                max-width: 200px;
-                padding: 6px 12px;
-            }
-        }
+.contact-details p {
+    margin: 4px 0;
+    white-space: nowrap;
+}
+
+/* Adaptation mobile */
+@media (max-width: 880px) {
+    .header-profile {
+        align-items: center;
+    }
+    .contact-details p {
+        white-space: normal;
+        font-size: 0.7rem;
+    }
+    .profile-photo {
+        width: 64px;
+        height: 64px;
+    }
+    .logo-img {
+        height: 64px;
+    }
+    .contact-details {
+        max-width: 200px;
+        padding: 6px 12px;
+    }
+    .teacher-badge {
+        font-size: 0.7rem;
+    }
+}
 
         /* Responsive */
         @media (max-width: 880px) {
@@ -407,17 +411,16 @@
 
 <div class="site-header">
     <div class="header-container">
-        <!-- Logo + texte (image logo personnalisable) -->
+        <!-- Logo + texte -->
         <a href="#" class="brand">
-            <!-- Remplacez 'logo.png' par le chemin de votre logo réel -->
-            <img src="images/logo_univ_oran1.png" alt="Logo Université d'Oran 1" class="logo-img" onerror="this.src='https://placehold.co/48x48?text=🦟';">
+            <img src="images/logo_univ_oran1.png" alt="Logo Université d'Oran 1" class="logo-img" onerror="this.src='https://placehold.co/96x96?text=🦟';">
             <div class="brand-text">
                 <span class="brand-title">Drosophila Dev</span>
                 <span class="brand-sub">Génétique & Développement</span>
             </div>
         </a>
 
-        <!-- Navigation principale -->
+        <!-- Navigation -->
         <div class="nav-menu" id="navMenu">
             <a href="#accueil">Accueil</a>
             <a href="#cours">Cours</a>
@@ -427,11 +430,19 @@
             <a href="#contact">Contact</a>
         </div>
 
-        <!-- Photo de profil / Enseignant (votre photo) -->
+        <!-- Photo + Coordonnées -->
         <div class="header-profile">
-            <!-- Remplacez 'photo_profil.jpg' par le chemin de votre photo -->
-            <img src="images/photo_allouche.jpg" alt="Dr Abdelkader ALLOUCHE" class="profile-photo" onerror="this.src='https://placehold.co/44x44?text=👨‍🏫';">
-            <span class="teacher-badge">Dr A. Allouche</span>
+            <img src="images/photo_allouche.jpg" alt="Dr Abdelkader ALLOUCHE" class="profile-photo" onerror="this.src='https://placehold.co/88x88?text=👨‍🏫';">
+            <div class="teacher-contact-info">
+                <span class="teacher-badge">Dr A. Allouche</span>
+                <div class="contact-details">
+                    <p>🏛️ Université d'Oran 1 – Ahmed Ben Bella</p>
+                    <p>🔬 Faculté des Sciences de la nature et de la vie</p>
+                    <p>🧬 Département de Biotechnologie</p>
+                    <p>👨‍🏫 Maître de Conférence en Biologie</p>
+                    <p>🏢 Institut national de recherche</p>
+                </div>
+            </div>
         </div>
 
         <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
