@@ -72,7 +72,7 @@
         }
 
         .logo-img {
-            height: 48px;
+            height: 96px;      /* au lieu de 48px (x2) */            
             width: auto;
             border-radius: 12px;
             transition: transform 0.2s;
@@ -128,8 +128,8 @@
         }
 
         .profile-photo {
-            width: 44px;
-            height: 44px;
+            width: 88px;       /* au lieu de 44px (x2) */
+            height: 88px;
             border-radius: 100%;
             object-fit: cover;
             border: 2px solid var(--white);
@@ -141,25 +141,60 @@
         .profile-photo:hover {
             transform: scale(1.02);
         }
-
-        .teacher-badge {
-            font-size: 0.8rem;
-            font-weight: 500;
-            background: #eef2ff;
-            padding: 4px 10px;
-            border-radius: 30px;
-            color: var(--primary-color);
-            display: none;
+<div class="header-profile">
+    <img src="images/photo_allouche.jpg" alt="Dr Abdelkader ALLOUCHE" class="profile-photo" onerror="this.src='https://placehold.co/88x88?text=👨‍🏫';">
+    <div class="teacher-contact-info">
+        <span class="teacher-badge">Dr A. Allouche</span>
+        <div class="contact-details">
+            <p>🏛️ Université d'Oran 1 – Ahmed Ben Bella</p>
+            <p>🔬 Faculté SNV – Département de Biotechnologie</p>
+            <p>👨‍🏫 Maître de Conférences en Biologie</p>
+            <p>🏢 Institut national de recherche</p>
+        </div>
+    </div>
+</div>
+        .teacher-contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
         }
 
-        /* mobile menu */
-        .mobile-toggle {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--primary-color);
-            background: none;
-            border: none;
+        .contact-details {
+            background: rgba(15, 59, 95, 0.08);
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            padding: 10px 16px;
+            font-size: 0.75rem;
+            color: var(--text-dark);
+            max-width: 260px;
+            line-height: 1.4;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-details p {
+            margin: 4px 0;
+            white-space: nowrap;
+            }
+
+        /* Adaptation mobile */
+        @media (max-width: 880px) {
+            .contact-details p {
+                white-space: normal;
+                font-size: 0.7rem;
+            }
+            .profile-photo {
+                width: 64px;
+                height: 64px;
+            }
+            .logo-img {
+                height: 64px;
+            }
+            .contact-details {
+                max-width: 200px;
+                padding: 6px 12px;
+            }
         }
 
         /* Responsive */
