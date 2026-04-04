@@ -455,6 +455,7 @@
             </div>
         </div>
     </div>
+    
     <!-- Footer End -->
 
 
@@ -473,6 +474,20 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
  
+<script>
+    // Menu mobile
+    const toggleBtn = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (toggleBtn && navMenu) {
+        toggleBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    }
 </script>
 </body>
 </html>
