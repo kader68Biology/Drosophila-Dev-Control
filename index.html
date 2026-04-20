@@ -776,6 +776,21 @@
             }
         });
     });
+<script>
+function sendHeight() {
+  const height = document.body.scrollHeight;
+  window.parent.postMessage({
+    type: "resize",
+    height: height
+  }, "*");
+}
+
+// envoyer au chargement
+window.addEventListener("load", sendHeight);
+
+// envoyer si contenu change (important)
+const observer = new ResizeObserver(sendHeight);
+observer.observe(document.body);
 </script>
 </body>
 </html>
