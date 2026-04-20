@@ -34,6 +34,7 @@
             color: var(--text-dark);
             line-height: 1.5;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         .container {
@@ -189,7 +190,8 @@
                 top: 70px;
                 left: -100%;
                 width: 75%;
-                height: calc(100vh - 70px);
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
                 background: var(--white);
                 flex-direction: column;
                 gap: 1.5rem;
@@ -778,19 +780,23 @@
     });
 <script>
 function sendHeight() {
-  const height = document.body.scrollHeight;
+  const height = document.documentElement.scrollHeight;
   window.parent.postMessage({
     type: "resize",
     height: height
   }, "*");
 }
 
-// envoyer au chargement
+// existing observers
 window.addEventListener("load", sendHeight);
+window.addEventListener("resize", sendHeight);
 
-// envoyer si contenu change (important)
-const observer = new ResizeObserver(sendHeight);
-observer.observe(document.body);
+// 👇 ADD THIS (critical for your menu)
+document.querySelectorAll('.nav-toggle, .nav-menu a').forEach(el => {
+  el.addEventListener('click', () => {
+    setTimeout(sendHeight, 300); // wait for animation
+  });
+});
 </script>
 </body>
 </html>
